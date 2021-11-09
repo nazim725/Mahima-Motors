@@ -120,10 +120,4 @@ const useFirebase = () => {
         authError,
         registerUser,
         loginUser,
-        signInWithGoogle,
-        logout,
-    }
-
-}
-
-export default useFirebase;
+        signInWithGoogle,y
