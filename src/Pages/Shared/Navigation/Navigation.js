@@ -28,6 +28,11 @@ const Navigation = () => {
                         Mahima Motors
                     </Typography>
                     {
+                        user.email &&   <NavLink style={{ textDecoration: 'none' }} to="/dashboard"> <Button sx={{ m: 1 }} variant="contained">Dashboard</Button></NavLink>
+                    }
+
+                    <NavLink style={{ textDecoration: 'none' }} to="/home"> <Button sx={{ m: 1 }} variant="contained">Home</Button></NavLink>
+                    {
                         user.email ?
                             <Button variant="contained" onClick={logout} sx={{ m: 1 }}>logout</Button>
                             :

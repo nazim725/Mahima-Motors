@@ -1,0 +1,10 @@
+.reviews-container{
+    margin:  0 50px;
+}
+
+@media screen and (max-width:768px) {
+
+    .reviews-container{
+    margin:  0 10px;
+}
+}

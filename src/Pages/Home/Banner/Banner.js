@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import motor from '../../../images/motor.png'
 import { Typography,Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -28,7 +29,7 @@ const Banner = () => {
                         <Typography variant="h6" gutterBottom component="div">
                             <span>A Desired Satisfaction from</span> <span>MAHIMA MOTORS</span>
                         </Typography>
-                        <Button variant="contained">Explore Products</Button>
+                       <NavLink style={{textDecoration:'none'}} to="/explore"> <Button variant="contained">Explore Products</Button></NavLink>
                     </Box>
 
                 </Grid>

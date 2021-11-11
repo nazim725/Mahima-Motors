@@ -1,0 +1,41 @@
+
+.about-container{
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+
+.box{
+    display: flex;
+    align-items: center;
+   
+}
+.core-values{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+
+.box img{
+    width: 50px;
+    height: 50px;
+}
+
+.core-info{
+    margin-left: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .about-container{
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    .core-values{
+        
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+    
+    
+}

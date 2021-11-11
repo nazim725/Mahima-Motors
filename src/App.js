@@ -1,10 +1,19 @@
 
 import './App.css';
 import Home from './Pages/Home/Home/Home';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from '../src/Pages/Login/Registration/Register'
 import AuthProvider from '../src/Components/Context/AuthProvider'
+import PrivateRoute from '../src/Components/PrivateRoute/PrivateRoute'
 import Login from './Pages/Login/Login/Login';
+import AddProducts from './Pages/Admin/AddProducts/AddProducts';
+import MakeAdmin from './Pages/Admin/MakeAdmin/MakeAdmin'
+import Explore from './Pages/Explore/Explore/Explore';
+import Purchase from './Pages/Explore/Purchase/Purchase';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
+import Reviews from './Pages/Home/Review/Reviews/Reviews'
+import Footer from './Pages/Shared/Footer/Footer'
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 
 function App() {
@@ -23,10 +32,39 @@ function App() {
               <Register></Register>
             </Route>
             <Route path="/login">
-             <Login></Login>
+              <Login></Login>
+            </Route>
+            <Route path="/addProducts">
+              <AddProducts></AddProducts>
+            </Route>
+
+            <Route path="/explore">
+              <Explore></Explore>
+            </Route>
+            <PrivateRoute path="/purchase/:productId">
+              <Purchase></Purchase>
+            </PrivateRoute>
+
+            <Route path="/addReview">
+              <AddReview></AddReview>
+            </Route>
+
+            <Route path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+
+            <Route path="/reviews">
+              <Reviews></Reviews>
+            </Route>
+
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
           </Switch>
+          
         </Router>
+
+
 
       </AuthProvider>
     </div>
