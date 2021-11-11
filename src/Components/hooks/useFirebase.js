@@ -97,7 +97,7 @@ const useFirebase = () => {
 
     // load admin for admin check kono email change hole check korbe admin kina.
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://calm-bayou-08028.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])

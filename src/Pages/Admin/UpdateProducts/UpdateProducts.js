@@ -11,7 +11,7 @@ const UpdateProducts = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
 
-    const url = `http://localhost:5000/products/${productId}`
+    const url = `https://calm-bayou-08028.herokuapp.com/products/${productId}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -22,7 +22,7 @@ const UpdateProducts = () => {
 
 
     const handleUpdateProduct = e => {
-        const url = `http://localhost:5000/products/${productId}`;
+        const url = `https://calm-bayou-08028.herokuapp.com/products/${productId}`;
         console.log(url)
         fetch(url, {
             method: 'PUT',

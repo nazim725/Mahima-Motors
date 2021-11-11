@@ -37,7 +37,7 @@ const MyOrders = () => {
     const [orders, setOrders] = React.useState([])
 
     React.useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://calm-bayou-08028.herokuapp.com/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data));
@@ -49,7 +49,7 @@ const MyOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://calm-bayou-08028.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -48,7 +48,7 @@ const ManageProducts = () => {
 
     const [products, setProducts] = React.useState([])
     React.useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://calm-bayou-08028.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -61,7 +61,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://calm-bayou-08028.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

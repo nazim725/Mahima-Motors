@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
     const [updateOrder, setUpdateOrder] = React.useState({})
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/orders/admin')
+        fetch('https://calm-bayou-08028.herokuapp.com/orders/admin')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -72,7 +72,7 @@ const ManageAllOrders = () => {
 
     //     // ---------------------
     //     console.log(id)
-    //     const url=`http://localhost:5000/orders/${id}`
+    //     const url=`https://calm-bayou-08028.herokuapp.com/orders/${id}`
     //     console.log(url)
     //     fetch(url, {
     //         method: 'PUT',
