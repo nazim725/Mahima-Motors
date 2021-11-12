@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { useParams } from 'react-router';
 import useAuth from '../../../Components/hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
+import Zoom from 'react-reveal/Zoom';
 
 
 const Purchase = () => {
@@ -13,7 +14,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({})
     const { user } = useAuth();
     const { productId } = useParams()
-    const initialInfo = { customerName: user.displayName, email: user.email, phone: '', address: '',status:'Pending' }
+    const initialInfo = { email: user.email, phone: '', address: '', status: 'Pending' }
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
     const handleOnBlur = e => {
@@ -44,6 +45,7 @@ const Purchase = () => {
 
 
         }
+        console.log(purchaseProduct);
         // send to the server
         fetch('https://calm-bayou-08028.herokuapp.com/orders', {
             method: 'POST',
@@ -63,52 +65,55 @@ const Purchase = () => {
         e.preventDefault();
     }
     return (
-        <Box>
-            <Navigation></Navigation>
-            <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
-                {product.name}
-            </Typography>
-
-            <form className="login-form" onSubmit={handlePurchaseSubmit}>
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-password-input"
-                    name="CustomerName"
-                    onBlur={handleOnBlur}
-                    defaultValue={user.displayName}
-                    size="small"
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    name="email"
-                    onBlur={handleOnBlur}
-                    defaultValue={user.email}
-                    size="small"
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    name="phone"
-                    onBlur={handleOnBlur}
-                    defaultValue="Phone Number"
-                    size="small"
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    name="address"
-                    onBlur={handleOnBlur}
-                    defaultValue="Address"
-                    size="small"
-                />
-
-                <Typography id="transition-modal-title" variant="h6" component="h2">
-                    Your Product Charged will be <span style={{ color: 'blue', fontWeight: 'bold' }}>{product.price}  </span>tk
+        <Zoom>
+            <Box>
+                <Navigation></Navigation>
+                <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
+                    {product.name}
                 </Typography>
-                <Button type="submit" variant="contained">Order Confirm</Button>
-            </form>
-        </Box>
+
+                <form className="login-form" onSubmit={handlePurchaseSubmit}>
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-password-input"
+                        name="customerName"
+                        onBlur={handleOnBlur}
+                        placeholder="Your Name"
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        name="email"
+                        onBlur={handleOnBlur}
+                        defaultValue={user.email}
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        name="phone"
+                        onBlur={handleOnBlur}
+                        defaultValue="Phone Number"
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        name="address"
+                        onBlur={handleOnBlur}
+                        defaultValue="Address"
+                        size="small"
+                    />
+
+                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                        Your Product Charged will be <span style={{ color: 'blue', fontWeight: 'bold' }}>{product.price}  </span>tk
+                    </Typography>
+                    <Button type="submit" variant="contained">Order Confirm</Button>
+                </form>
+            </Box>
+        </Zoom>
+
     );
 };
 

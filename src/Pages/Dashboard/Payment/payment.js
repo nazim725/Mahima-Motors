@@ -1,10 +1,13 @@
 import React from 'react';
+import Zoom from 'react-reveal/Zoom';
 
 const payment = () => {
     return (
-        <div>
-            <h3>Payment system coming soon.</h3>
-        </div>
+        <Zoom>
+            <div>
+                <h3>Payment system coming soon.</h3>
+            </div>
+        </Zoom>
     );
 };
 

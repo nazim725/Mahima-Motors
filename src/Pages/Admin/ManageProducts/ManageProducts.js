@@ -7,9 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
+import Zoom from 'react-reveal/Zoom';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -76,67 +75,43 @@ const ManageProducts = () => {
         }
     }
     return (
-        <div>
 
-            <h2>Total Orders: {products.length}</h2>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Image</StyledTableCell>
-                            <StyledTableCell align="center">Product Name</StyledTableCell>
-                            <StyledTableCell align="center">Action</StyledTableCell>
-                            {/* <StyledTableCell align="center">Action</StyledTableCell> */}
-                            
+        <Zoom>
+            <div>
+
+                <h2>Total Orders: {products.length}</h2>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Image</StyledTableCell>
+                                <StyledTableCell align="center">Product Name</StyledTableCell>
+                                <StyledTableCell align="center">Action</StyledTableCell>
+                                {/* <StyledTableCell align="center">Action</StyledTableCell> */}
 
 
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {products.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    <img style={{ width: '70px', height: '50px' }} src={row.img} alt="" />
-                                </StyledTableCell>
-                                <StyledTableCell align="center">{row.name}</StyledTableCell>
-                                {/* <StyledTableCell align="center"> */}
-                                    {/* ------------------------------------------------------------------------------ */}
-                                    {/* <Button
-                                        id="basic-button"
-                                        aria-controls="basic-menu"
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        action
-                                    </Button>
-                                    <Menu
-                                        id="basic-menu"
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                        MenuListProps={{
-                                            'aria-labelledby': 'basic-button',
-                                        }}
-                                    >
-                                        <MenuItem onClick={handleClose}><Button onClick={() => handleDelete(row._id)}>Delete</Button></MenuItem>
-                                        <MenuItem onClick={handleClose}> <NavLink to={`updateProducts/${row._id}`}><Button>Update</Button></NavLink></MenuItem>
-                                       
-                                    </Menu> */}
 
-                                    {/* -------------------------------------------------------------------------------- */}
-{/* 
-                                </StyledTableCell> */}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {products.map((row) => (
+                                <StyledTableRow key={row.name}>
+                                    <StyledTableCell component="th" scope="row">
+                                        <img style={{ width: '70px', height: '50px' }} src={row.img} alt="" />
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center">{row.name}</StyledTableCell>
 
-                                <StyledTableCell align="center"> <NavLink style={{textDecoration:'none'}} to={`updateProducts/${row._id}`}><Button>Update</Button></NavLink> <Button onClick={() => handleDelete(row._id)}>Delete</Button></StyledTableCell>
-                               
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
 
-        </div>
+                                    <StyledTableCell align="center"> <NavLink style={{ textDecoration: 'none' }} to={`updateProducts/${row._id}`}><Button className="button">Update</Button></NavLink> <Button className="cancel-button" onClick={() => handleDelete(row._id)}>Delete</Button></StyledTableCell>
+
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+
+            </div>
+        </Zoom>
     );
 };
 

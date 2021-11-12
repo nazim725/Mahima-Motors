@@ -4,6 +4,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import Stack from '@mui/material/Stack';
+import Zoom from 'react-reveal/Zoom';
 
 
 
@@ -43,64 +44,67 @@ const AddReview = () => {
         e.preventDefault();
     }
     return (
-        <form onSubmit={handleAddReview}>
+        <Zoom>
+            <form onSubmit={handleAddReview}>
 
-            <h2  className="Products-heading">Add  Your Review About Our Motor Bikie</h2>
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="Product Name"
-                size="small"
-                inputRef={productNameRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="Name"
-                size="small"
-                inputRef={nameRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="description"
-                size="small"
-                inputRef={descriptionRef}
-            />
-
-
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="Image URL"
-                size="small"
-                inputRef={imgRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="RatingL"
-                size="small"
-                inputRef={ratingRef}
-            />
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <Stack spacing={3}>
+                <h2 className="Products-heading">Add  Your Review About Our Motor Bikie</h2>
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="Product Name"
+                    size="small"
+                    inputRef={productNameRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="Name"
+                    size="small"
+                    inputRef={nameRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="description"
+                    size="small"
+                    inputRef={descriptionRef}
+                />
 
 
-                    <DatePicker
-                        disableFuture
-                        // openTo="day"
-                        views={['day']}
-                        value={date}
-                        onChange={(newValue) => {
-                            setDate(newValue);
-                        }}
-                        renderInput={(params) => <TextField sx={{ width: '90%', m: 1 }} {...params} />}
-                    />
-                </Stack>
-            </LocalizationProvider>
-            <Button  sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Review</Button>
-        </form>
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="Image URL"
+                    size="small"
+                    inputRef={imgRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="RatingL"
+                    size="small"
+                    inputRef={ratingRef}
+                />
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <Stack spacing={3}>
+
+
+                        <DatePicker
+                            disableFuture
+                            // openTo="day"
+                            views={['day']}
+                            value={date}
+                            onChange={(newValue) => {
+                                setDate(newValue);
+                            }}
+                            renderInput={(params) => <TextField sx={{ width: '90%', m: 1 }} {...params} />}
+                        />
+                    </Stack>
+                </LocalizationProvider>
+                <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Review</Button>
+            </form>
+
+        </Zoom>
     );
 };
 

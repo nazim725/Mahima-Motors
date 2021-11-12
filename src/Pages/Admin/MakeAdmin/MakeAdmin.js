@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Alert } from '@mui/material';
+import Zoom from 'react-reveal/Zoom';
 
 
 const MakeAdmin = () => {
@@ -31,25 +32,31 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <div>
-            <h2 className="Products-heading">Make An Admin</h2>
-            <form onSubmit={handleAdminSubmit}>
-                <TextField
-                    style={{ width: '90%' }}
-                    id="outlined-password-input"
-                    label="Email"
-                    type="email"
-                    onBlur={handleOnBlur}
+        <Zoom>
+            <div>
 
-                />
-                <br />
+                <h2 className="Products-heading">Make An Admin</h2>
+                <form onSubmit={handleAdminSubmit}>
+                    <TextField
+                        style={{ width: '90%' }}
+                        id="outlined-password-input"
+                        label="Email"
+                        type="email"
+                        onBlur={handleOnBlur}
 
-                <Button style={{ width: '90%' }} sx={{ mt: 2 }} type="submit" variant="contained">Make Admin</Button>
-            </form>
-            {
-                success && <Alert severity="success">Successfully Make Admin</Alert>
-            }
-        </div>
+                    />
+                    <br />
+
+                    <Button style={{ width: '90%' }} sx={{ mt: 2 }} type="submit" variant="contained">Make Admin</Button>
+                </form>
+                {
+                    success && <Alert severity="success">Successfully Make Admin</Alert>
+                }
+
+
+            </div>
+
+        </Zoom>
     );
 };
 

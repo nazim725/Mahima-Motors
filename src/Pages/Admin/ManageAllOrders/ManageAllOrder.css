@@ -1,0 +1,28 @@
+
+.button{
+    background-color: rgb(4, 73, 34);
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 8px;
+    
+}
+.button:hover{
+    background-color: rgb(34, 53, 42);
+    color: rgb(0, 109, 117);  
+}
+
+.cancel-button{
+    background-color: rgb(236, 14, 44);
+    padding: 10px 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    color: white
+}
+.cancel-button:hover{
+    background-color: rgb(203, 14, 236);
+    padding: 10px 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    color: white
+}

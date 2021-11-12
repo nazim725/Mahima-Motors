@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { TextField, Button } from '@mui/material';
+import Zoom from 'react-reveal/Zoom';
 
 
 const AddProducts = () => {
@@ -34,39 +35,48 @@ const AddProducts = () => {
         e.preventDefault();
     }
 
+
+
     return (
-        <form onSubmit={handleAddProducts}>
-            <h2 className="Products-heading">Add a Product</h2>
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder=" Products Name"
-                size="small"
-                inputRef={nameRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="description"
-                size="small"
-                inputRef={descriptionRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="Image URL"
-                size="small"
-                inputRef={imgRef}
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                placeholder="Products Price"
-                size="small"
-                inputRef={priceRef}
-            />
-            <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Product</Button>
-        </form>
+
+        <Zoom>
+            <form onSubmit={handleAddProducts}>
+                <h2 className="Products-heading">Add a Product</h2>
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder=" Products Name"
+                    size="small"
+                    inputRef={nameRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="description"
+                    size="small"
+                    inputRef={descriptionRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="Image URL"
+                    size="small"
+                    inputRef={imgRef}
+                />
+                <TextField
+                    sx={{ width: '90%', m: 1 }}
+                    id="outlined-size-small"
+                    placeholder="Products Price"
+                    size="small"
+                    inputRef={priceRef}
+                />
+
+
+
+
+                <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Product</Button>
+            </form>
+        </Zoom>
     );
 };
 

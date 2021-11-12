@@ -8,6 +8,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import useAuth from '../../../Components/hooks/useAuth';
+import Zoom from 'react-reveal/Zoom';
+
+import './ManageAllOrder.css'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -34,7 +37,7 @@ const ManageAllOrders = () => {
 
     const { user } = useAuth();
     const [orders, setOrders] = React.useState([])
-    const [updateOrder, setUpdateOrder] = React.useState({})
+    const [status, setStatus] = React.useState('');
 
     React.useEffect(() => {
         fetch('https://calm-bayou-08028.herokuapp.com/orders/admin')
@@ -66,21 +69,21 @@ const ManageAllOrders = () => {
 
 
     const handleChangedStatus = id => {
-        const url = `https://calm-bayou-08028.herokuapp.com/orders/admin/${id}`
+        const url = `http://localhost:5000/orders/admin/${id}`
         // console.log(id)
-        // console.log(url)
+        console.log(url)
         fetch(url, {
-            method: 'PUT',
+            method: 'put',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateOrder)
+            body: JSON.stringify({ status })
         })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
                     alert("Update successful")
-                    // setUpdateOrder(data)
+
 
                 }
 
@@ -90,44 +93,51 @@ const ManageAllOrders = () => {
     }
 
 
-    const handlestatusChange = () => {
-        const UpdatedStatus = 'Approved'
-        const updatedOrder = { customerName: orders.customerName, productPrice: orders.productPrice, email: orders.email, phone: orders.phone, address: orders.address, productName: orders.productName, status: UpdatedStatus };
-        console.log(updatedOrder)
-        setUpdateOrder(updatedOrder)
-    }
+
 
     return (
-        <div>
-            <h2>Total Orders: {orders.length}</h2>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Customer Name</StyledTableCell>
-                            <StyledTableCell align="center">Product Name</StyledTableCell>
-                            <StyledTableCell align="center">Price</StyledTableCell>
-                            <StyledTableCell align="center">Action</StyledTableCell>
-                            <StyledTableCell align="center">Status</StyledTableCell>
+        <Zoom>
+            <div>
+                <h2>Total Orders: {orders.length}</h2>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Customer Name</StyledTableCell>
+                                <StyledTableCell align="center">Product Name</StyledTableCell>
+                                <StyledTableCell align="center">Price</StyledTableCell>
+                                <StyledTableCell align="center">Status</StyledTableCell>
+                                <StyledTableCell align="center">Action</StyledTableCell>
 
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {orders.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.customerName}
-                                </StyledTableCell>
-                                <StyledTableCell align="center">{row.productName}</StyledTableCell>
-                                <StyledTableCell align="center">{row.productPrice}</StyledTableCell>
-                                <StyledTableCell align="center"><Button onClick={() => handleDeleteOrder(row._id)}>Cancel Order</Button></StyledTableCell>
-                                <StyledTableCell align="center"><Button onClick={() => handleChangedStatus(row._id)} variant="contained">{row.status}</Button></StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {orders.map((row) => (
+                                <StyledTableRow key={row.name}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {row.customerName}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center">{row.productName}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.productPrice}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.status}</StyledTableCell>
+                                    <StyledTableCell align="center">
+                                        <button className="cancel-button" onClick={() => handleDeleteOrder(row._id)}>Cancel Order</button>
+                                        <button onClick={() => handleChangedStatus(row._id)} className="button">Update</button>
+                                        <select className="button" onChange={e => setStatus(e.target.value)}>
+                                            <option value="select" disabled selected>Select Status</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="approved">Approved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
+        </Zoom>
     );
 };
 

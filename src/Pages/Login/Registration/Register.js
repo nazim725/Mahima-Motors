@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import useAuth from '../../../Components/hooks/useAuth'
 import Box from '@mui/material/Box';
+import Rotate from 'react-reveal/Rotate';
 
 const Register = () => {
     const { registerUser, isLoading, user, authError } = useAuth()
@@ -35,77 +36,80 @@ const Register = () => {
     }
 
     return (
-        <Container>
-            <Box>
-                <Typography className="login-heading" sx={{ mt: 4 }} variant="h4" gutterBottom>
-                    Create Account
-                </Typography>
+        <Rotate top left cascade>
+            <Container>
+                <Box>
+                    <Typography className="login-heading" sx={{ mt: 4 }} variant="h4" gutterBottom>
+                        Create Account
+                    </Typography>
 
 
-                {!isLoading && <form className="login-form" onSubmit={handleLoginSubmit}>
-                    <TextField
-                        id="standard-basic"
-                        label="Your Email"
-                        variant="standard"
-                        name="email"
-                        type="email"
-                        onBlur={handleOnBlur}
-                        sx={{ width: '75%', m: 1 }}
+                    {!isLoading && <form className="login-form" onSubmit={handleLoginSubmit}>
+                        <TextField
+                            id="standard-basic"
+                            label="Your Email"
+                            variant="standard"
+                            name="email"
+                            type="email"
+                            onBlur={handleOnBlur}
+                            sx={{ width: '75%', m: 1 }}
 
-                    />
-                    <TextField
-                        id="standard-basic"
-                        label="Your Name"
-                        variant="standard"
-                        name="name"
-                        type="text"
-                        onBlur={handleOnBlur}
-                        sx={{ width: '75%', m: 1 }}
+                        />
+                        <TextField
+                            id="standard-basic"
+                            label="Your Name"
+                            variant="standard"
+                            name="name"
+                            type="text"
+                            onBlur={handleOnBlur}
+                            sx={{ width: '75%', m: 1 }}
 
-                    />
+                        />
 
-                    <TextField
-                        id="standard-basic"
-                        label="Your Password"
-                        variant="standard"
-                        type="password"
-                        name="password"
-                        onBlur={handleOnBlur}
+                        <TextField
+                            id="standard-basic"
+                            label="Your Password"
+                            variant="standard"
+                            type="password"
+                            name="password"
+                            onBlur={handleOnBlur}
 
-                        sx={{ width: '75%', m: 1 }} />
-                    <TextField
-                        id="standard-basic"
-                        label=" Re-Enter Your Password"
-                        variant="standard"
-                        type="password"
-                        name="password2"
-                        onBlur={handleOnBlur}
+                            sx={{ width: '75%', m: 1 }} />
+                        <TextField
+                            id="standard-basic"
+                            label=" Re-Enter Your Password"
+                            variant="standard"
+                            type="password"
+                            name="password2"
+                            onBlur={handleOnBlur}
 
-                        sx={{ width: '75%', m: 1 }} />
+                            sx={{ width: '75%', m: 1 }} />
 
-                    <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
+                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
 
-                    <NavLink sx={{ textAlign: 'center' }} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
-
-
-                    {
-                        isLoading && <CircularProgress />
-                    }
-
-                    {
-                        user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
-                    }
-
-                    {
-                        authError && <Alert severity="error">{authError}</Alert>
-                    }
-
-                </form>}
+                        <NavLink sx={{ textAlign: 'center' }} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
 
 
+                        {
+                            isLoading && <CircularProgress />
+                        }
 
-            </Box>
-        </Container>
+                        {
+                            user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
+                        }
+
+                        {
+                            authError && <Alert severity="error">{authError}</Alert>
+                        }
+
+                    </form>}
+
+
+
+                </Box>
+            </Container>
+        </Rotate>
+
     );
 };
 

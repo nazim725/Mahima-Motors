@@ -18,7 +18,7 @@ const Reviews = () => {
                 <h3 className="Products-heading"> Products Reviews</h3>
                 <div className="">
                     {
-                        reviews.map(review => <Review key={review._id} review={review}></Review>).slice(0,3)
+                        reviews.map(review => <Review key={review._id} review={review}></Review>)
                     }
                 </div>
 

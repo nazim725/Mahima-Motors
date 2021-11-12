@@ -5,11 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea ,Button,Box} from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import Zoom from 'react-reveal/Zoom';
 
 const ExploreProduct = (props) => {
     const { name, price, description, img ,_id} = props.product
     return (
         <div>
+            <Zoom>
             <Card sx={{ maxWidth: 345, height: 370, pb: 2 }}>
                 <CardActionArea>
                     <CardMedia
@@ -37,6 +39,8 @@ const ExploreProduct = (props) => {
                     </CardContent>
                 </CardActionArea>
             </Card>
+
+            </Zoom>
 
         </div>
     );

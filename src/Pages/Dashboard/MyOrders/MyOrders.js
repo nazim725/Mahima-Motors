@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import useAuth from '../../../Components/hooks/useAuth';
+import Zoom from 'react-reveal/Zoom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -65,36 +66,38 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
-            <h2>Total Orders: {orders.length}</h2>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Customer Name</StyledTableCell>
-                            <StyledTableCell align="center">Product Name</StyledTableCell>
-                            <StyledTableCell align="center">Price</StyledTableCell>
-                            <StyledTableCell align="center">Action</StyledTableCell>
-                            <StyledTableCell align="center">Status</StyledTableCell>
+        <Zoom>
+            <div>
+                <h2>Total Orders: {orders.length}</h2>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Customer Name</StyledTableCell>
+                                <StyledTableCell align="center">Product Name</StyledTableCell>
+                                <StyledTableCell align="center">Price</StyledTableCell>
+                                <StyledTableCell align="center">Action</StyledTableCell>
+                                <StyledTableCell align="center">Status</StyledTableCell>
 
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {orders.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.customerName}
-                                </StyledTableCell>
-                                <StyledTableCell align="center">{row.productName}</StyledTableCell>
-                                <StyledTableCell align="center">{row.productPrice}</StyledTableCell>
-                                <StyledTableCell align="center"><Button onClick={()=>handleDeleteOrder(row._id)}>Cancel Order</Button></StyledTableCell>
-                                <StyledTableCell align="center">{row.status}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {orders.map((row) => (
+                                <StyledTableRow key={row.name}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {row.customerName}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center">{row.productName}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.productPrice}</StyledTableCell>
+                                    <StyledTableCell align="center"><Button onClick={() => handleDeleteOrder(row._id)}>Cancel Order</Button></StyledTableCell>
+                                    <StyledTableCell align="center">{row.status}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
+        </Zoom>
     );
 };
 
