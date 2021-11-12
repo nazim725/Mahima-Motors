@@ -20,6 +20,10 @@ import ManageAllOrders from '../../Admin/ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../../Admin/ManageProducts/ManageProducts';
 import UpdateProducts from '../../Admin/UpdateProducts/UpdateProducts';
 
+import './Dashboard.css'
+import DashboardHome from '../DashboardHome/DashboardHome';
+import AllReview from '../AllReview/AllReview/AllReview'
+
 
 
 const drawerWidth = 200;
@@ -35,22 +39,35 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
-            <Toolbar />
-            <NavLink to="/home">Go to Home</NavLink> <br />
-            <NavLink to={`${url}`}>Dashboard</NavLink> <br />
+        <div className="dashboard-side">
+            <h2 className="title">MAHIMA MOTORS</h2>
+            <NavLink to="/home"> <button className='navlink'>Go to Home</button></NavLink> <br />
+            <NavLink to={`${url}`}><button className='navlink'>Dashboard</button></NavLink> <br />
             {
                 admin && <Box>
-                    <NavLink to={`${url}/addProducts`}>Add Products</NavLink> <br />
-                    <NavLink to={`${url}/makeAdmin`}>Make Admin</NavLink> <br />
+                    <NavLink to={`${url}/addProducts`}><button className='navlink'>Add Products</button></NavLink> <br />
+                    <NavLink to={`${url}/makeAdmin`}><button className='navlink'>Make Admin</button></NavLink> <br />
+                    <NavLink to={`${url}/manageAllOrders`}><button className='navlink'>Manage All Orders</button></NavLink> <br />
+                    <NavLink to={`${url}/manageProducts`}><button className='navlink'>Manage Products</button></NavLink> <br />
                 </Box>
             }
-            <NavLink to={`${url}/addReview`}>Add Review</NavLink> <br />
-            <NavLink to={`${url}/payment`}>Payment</NavLink> <br />
-            <NavLink to={`${url}/myOrders`}>My Orders</NavLink> <br />
-            <NavLink to={`${url}/manageAllOrders`}>Manage All Orders</NavLink> <br />
-            <NavLink to={`${url}/manageProducts`}>Manage Products</NavLink> <br />
-            <Button variant="contained" onClick={logout}>Logout</Button>
+            {
+                !admin && <Box>
+                    <NavLink to={`${url}/addReview`}><button className='navlink'>Add Review</button></NavLink> <br />
+                    <NavLink to={`${url}/payment`}><button className='navlink'>Payment</button></NavLink> <br />
+                    <NavLink to={`${url}/myOrders`}><button className='navlink'>My Orders</button></NavLink> <br />
+                    <NavLink to={`${url}/allReview`}><button className='navlink'>Reviews</button></NavLink> <br />
+                </Box>
+            }
+
+
+            {
+                user.email? <button className='navlink' onClick={logout}>Logout</button>
+                    :
+                <NavLink to='/login'><button className='navlink'>Login</button></NavLink>
+            }
+
+
 
 
 
@@ -126,7 +143,7 @@ function Dashboard(props) {
 
                 <Switch>
                     <Route exact path={path}>
-                        <h3>Please select a topic.</h3>
+                        <DashboardHome></DashboardHome>
                     </Route>
                     <Route path={`${path}/addProducts`}>
                         <AddProducts></AddProducts>
@@ -144,13 +161,16 @@ function Dashboard(props) {
                         <MyOrders></MyOrders>
                     </Route>
                     <Route path={`${path}/manageAllOrders`}>
-                       <ManageAllOrders></ManageAllOrders>
+                        <ManageAllOrders></ManageAllOrders>
                     </Route>
                     <Route path={`${path}/manageProducts`}>
-                       <ManageProducts></ManageProducts>
+                        <ManageProducts></ManageProducts>
+                    </Route>
+                    <Route path={`${path}/allReview`}>
+                       <AllReview></AllReview>
                     </Route>
                     <Route path={`${path}/updateProducts/:productId`}>
-                       <UpdateProducts></UpdateProducts>
+                        <UpdateProducts></UpdateProducts>
                     </Route>
                 </Switch>
 

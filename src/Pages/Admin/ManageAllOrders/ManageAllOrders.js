@@ -40,7 +40,6 @@ const ManageAllOrders = () => {
         fetch('https://calm-bayou-08028.herokuapp.com/orders/admin')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setOrders(data)
             });
     }, [])
@@ -49,7 +48,8 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `               /${id}`;
+            const url = `https://calm-bayou-08028.herokuapp.com/orders/${id}`;
+
             fetch(url, {
                 method: 'DELETE'
             })
@@ -65,41 +65,37 @@ const ManageAllOrders = () => {
     }
 
 
-    // const handleChangedStatus = id => {
+    const handleChangedStatus = id => {
+        const url = `https://calm-bayou-08028.herokuapp.com/orders/admin/${id}`
+        // console.log(id)
+        // console.log(url)
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    alert("Update successful")
+                    // setUpdateOrder(data)
+
+                }
 
 
+            })
+
+    }
 
 
-    //     // ---------------------
-    //     console.log(id)
-    //     const url=`https://calm-bayou-08028.herokuapp.com/orders/${id}`
-    //     console.log(url)
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(updateOrder)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.modifiedCount) {
-
-    //                 setUpdateOrder(data)
-
-    //             }
-
-
-    //         })
-
-    // }
-
-
-    // const handlestatusChange = () => {
-    //     const updatedstatus = 'Approved'
-    //     const updatedOrder = { customerName: orders.customerName, productPrice: orders.productPrice, email: orders.email, phone: orders.phone, address: orders.address, productName: orders.productName, status: updatedstatus };
-    //     setUpdateOrder(updatedOrder)
-    // }
+    const handlestatusChange = () => {
+        const UpdatedStatus = 'Approved'
+        const updatedOrder = { customerName: orders.customerName, productPrice: orders.productPrice, email: orders.email, phone: orders.phone, address: orders.address, productName: orders.productName, status: UpdatedStatus };
+        console.log(updatedOrder)
+        setUpdateOrder(updatedOrder)
+    }
 
     return (
         <div>
@@ -125,7 +121,7 @@ const ManageAllOrders = () => {
                                 <StyledTableCell align="center">{row.productName}</StyledTableCell>
                                 <StyledTableCell align="center">{row.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center"><Button onClick={() => handleDeleteOrder(row._id)}>Cancel Order</Button></StyledTableCell>
-                                <StyledTableCell align="center"><Button variant="contained">{row.status}</Button></StyledTableCell>
+                                <StyledTableCell align="center"><Button onClick={() => handleChangedStatus(row._id)} variant="contained">{row.status}</Button></StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>

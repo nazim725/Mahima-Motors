@@ -67,7 +67,7 @@ const UpdateProducts = () => {
 
     return (
         <Box>
-        <Typography id="transition-modal-title" variant="h6" component="h2">
+        <Typography className="login-heading" id="transition-modal-title" variant="h4" component="h2">
             Update Products
         </Typography>
 
@@ -104,7 +104,7 @@ const UpdateProducts = () => {
                 value={product.description || ''}
                 size="small"
             />
-            <Button type="submit" variant="contained">Update</Button>
+            <Button   sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Update</Button>
         </form>
     </Box>
     );

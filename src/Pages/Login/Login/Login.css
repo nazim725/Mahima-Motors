@@ -1,0 +1,12 @@
+.login-form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.login-heading{
+    text-align: center;
+    color: rgb(9, 66, 124);
+    margin-top: 30px;
+}

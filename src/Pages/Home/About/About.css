@@ -1,13 +1,15 @@
 
 .about-container{
     padding: 0 50px;
-    margin-bottom: 50px;
+    padding-top: 20px;
+    /* margin-bottom: 50px; */
 }
 
 
 .box{
     display: flex;
     align-items: center;
+    color: deepskyblue;
    
 }
 .core-values{
@@ -23,6 +25,13 @@
 
 .core-info{
     margin-left: 20px;
+}
+
+.about-heading{
+    color: lightslategrey;
+}
+.core-heading{
+    color: deepskyblue;
 }
 
 @media screen and (max-width:768px) {

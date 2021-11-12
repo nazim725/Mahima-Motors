@@ -57,9 +57,9 @@ function App() {
               <Reviews></Reviews>
             </Route>
 
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
           </Switch>
           
         </Router>

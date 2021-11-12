@@ -65,11 +65,11 @@ const Purchase = () => {
     return (
         <Box>
             <Navigation></Navigation>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
+            <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
                 {product.name}
             </Typography>
 
-            <form onSubmit={handlePurchaseSubmit}>
+            <form className="login-form" onSubmit={handlePurchaseSubmit}>
                 <TextField
                     sx={{ width: '90%', m: 1 }}
                     id="outlined-password-input"

@@ -1,0 +1,19 @@
+.dashboard-side{
+    padding-left: 20px;
+    background-color: #033E3E;
+}
+.navlink{
+    width: 160px;
+    text-decoration: none;
+    background-color:#00CED1;
+    padding: 6px 14px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    color:rgb(73, 75, 77);
+    font-weight: bold;
+    
+}
+.title{
+    color:yellow;
+    text-align: center;
+}

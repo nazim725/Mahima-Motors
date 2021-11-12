@@ -37,12 +37,12 @@ const Register = () => {
     return (
         <Container>
             <Box>
-                <Typography sx={{ textAlign: 'center' }} variant="body1" gutterBottom>
+                <Typography className="login-heading" sx={{ mt: 4 }} variant="h4" gutterBottom>
                     Create Account
                 </Typography>
 
 
-                {!isLoading && <form onSubmit={handleLoginSubmit}>
+                {!isLoading && <form className="login-form" onSubmit={handleLoginSubmit}>
                     <TextField
                         id="standard-basic"
                         label="Your Email"
@@ -85,21 +85,23 @@ const Register = () => {
 
                     <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
 
-                    <NavLink sx={{textAlign:'center'}} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
+                    <NavLink sx={{ textAlign: 'center' }} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
+
+
+                    {
+                        isLoading && <CircularProgress />
+                    }
+
+                    {
+                        user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
+                    }
+
+                    {
+                        authError && <Alert severity="error">{authError}</Alert>
+                    }
 
                 </form>}
 
-                {
-                    isLoading && <CircularProgress />
-                }
-
-                {
-                    user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
-                }
-
-                {
-                    authError && <Alert severity="error">{authError}</Alert>
-                }
 
 
             </Box>

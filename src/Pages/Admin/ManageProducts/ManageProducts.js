@@ -86,7 +86,8 @@ const ManageProducts = () => {
                             <StyledTableCell>Image</StyledTableCell>
                             <StyledTableCell align="center">Product Name</StyledTableCell>
                             <StyledTableCell align="center">Action</StyledTableCell>
-                            <StyledTableCell align="center">delete</StyledTableCell>
+                            {/* <StyledTableCell align="center">Action</StyledTableCell> */}
+                            
 
 
                         </TableRow>
@@ -127,8 +128,8 @@ const ManageProducts = () => {
 {/* 
                                 </StyledTableCell> */}
 
-                                <StyledTableCell align="center"><Button onClick={() => handleDelete(row._id)}>Delete</Button></StyledTableCell>
-                                <StyledTableCell align="center"> <NavLink to={`updateProducts/${row._id}`}><Button>Update</Button></NavLink></StyledTableCell>
+                                <StyledTableCell align="center"> <NavLink style={{textDecoration:'none'}} to={`updateProducts/${row._id}`}><Button>Update</Button></NavLink> <Button onClick={() => handleDelete(row._id)}>Delete</Button></StyledTableCell>
+                               
                             </StyledTableRow>
                         ))}
                     </TableBody>

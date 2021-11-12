@@ -13,7 +13,7 @@ const Product = (props) => {
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="160"
                         image={img}
                         alt="green iguana"
                        
