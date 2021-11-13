@@ -102,7 +102,7 @@ const ManageProducts = () => {
                                     <StyledTableCell align="center">{row.name}</StyledTableCell>
 
 
-                                    <StyledTableCell align="center"> <NavLink style={{ textDecoration: 'none' }} to={`updateProducts/${row._id}`}><Button className="button">Update</Button></NavLink> <Button className="cancel-button" onClick={() => handleDelete(row._id)}>Delete</Button></StyledTableCell>
+                                    <StyledTableCell align="center"> <NavLink style={{ textDecoration: 'none' }} to={`updateProducts/${row._id}`}><button className="button">Update</button></NavLink> <button className="cancel-button" onClick={() => handleDelete(row._id)}>Delete</button></StyledTableCell>
 
                                 </StyledTableRow>
                             ))}

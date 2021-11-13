@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     color: deepskyblue;
+
    
 }
 .core-values{
@@ -42,8 +43,13 @@
 
     .core-values{
         
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(1,1fr);
         grid-gap: 10px;
+    }
+    .box{
+       margin-top: 10px;
+        
+       
     }
     
     
