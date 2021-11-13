@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router';
 import useAuth from '../../../Components/hooks/useAuth';
-import Navigation from '../../Shared/Navigation/Navigation';
+import NavigationBar from '../../Shared/Navigation/NavigationBar';
 import Zoom from 'react-reveal/Zoom';
 
 
@@ -68,7 +68,7 @@ const Purchase = () => {
         <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
             <Zoom>
                 <Box>
-                    <Navigation></Navigation>
+                   <NavigationBar></NavigationBar>
                     <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
                         {product.name}
                     </Typography>
