@@ -124,10 +124,10 @@ const ManageAllOrders = () => {
                                         <button className="cancel-button" onClick={() => handleDeleteOrder(row._id)}>Cancel Order</button>
                                         <button onClick={() => handleChangedStatus(row._id)} className="button">Update</button>
                                         <select className="button" onChange={e => setStatus(e.target.value)}>
-                                            <option value="select" disabled selected>Select Status</option>
+                                            <option value="Select" disabled selected>Select Status</option>
                                             <option value="pending">Pending</option>
-                                            <option value="approved">Approved</option>
-                                            <option value="rejected">Rejected</option>
+                                            <option value="Approved">Approved</option>
+                                            <option value="Rejected">Rejected</option>
                                         </select>
 
                                     </StyledTableCell>

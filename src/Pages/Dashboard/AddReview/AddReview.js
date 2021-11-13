@@ -50,7 +50,7 @@ const AddReview = () => {
 
                     <h2 className="Products-heading">Add  Your Review About Our Motor Bike</h2>
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={productNameRef}
                         label="Product Name"
@@ -62,7 +62,7 @@ const AddReview = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={nameRef}
                         label="Your Name"
@@ -74,7 +74,7 @@ const AddReview = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={descriptionRef}
                         label="description"
@@ -88,7 +88,7 @@ const AddReview = () => {
 
 
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         size="small"
                         inputRef={imgRef}
@@ -101,7 +101,7 @@ const AddReview = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={ratingRef}
                         label="description"
@@ -118,6 +118,7 @@ const AddReview = () => {
 
                             <DatePicker
                                 disableFuture
+                               
                                 // openTo="day"
                                 views={['day']}
                                 value={date}
@@ -130,7 +131,7 @@ const AddReview = () => {
                                     InputLabelProps={{
                                         style: { color: '#fff', paddingLeft: '10px' }
                                     }}
-                                    sx={{ width: '90%', m: 1, color: 'white' }} {...params} />}
+                                    sx={{ width: '90%', m: 1,input: { color: '#fff' } }} {...params} />}
                             />
                         </Stack>
                     </LocalizationProvider>

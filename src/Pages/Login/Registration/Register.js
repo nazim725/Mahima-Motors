@@ -53,7 +53,7 @@ const Register = () => {
                                 name="email"
                                 type="email"
                                 onBlur={handleOnBlur}
-                                sx={{ width: '75%', m: 1 }}
+                                sx={{ width: '75%', m: 1,input: { color: '#fff' } }}
                                 className='input-field'
                                 InputLabelProps={{
                                     style: { color: '#fff', paddingLeft: '10px' },
@@ -67,7 +67,7 @@ const Register = () => {
                                 name="name"
                                 type="text"
                                 onBlur={handleOnBlur}
-                                sx={{ width: '75%', m: 1 }}
+                                sx={{ width: '75%', m: 1,input: { color: '#fff' } }}
                                 className='input-field'
                                 InputLabelProps={{
                                     style: { color: '#fff', paddingLeft: '10px' },
@@ -86,7 +86,7 @@ const Register = () => {
                                 InputLabelProps={{
                                     style: { color: '#fff', paddingLeft: '10px' },
                                 }}
-                                sx={{ width: '75%', m: 1 }} />
+                                sx={{ width: '75%', m: 1 ,input: { color: '#fff' }}} />
                             <TextField
                                 id="standard-basic"
                                 label=" Re-Enter Your Password"
@@ -98,7 +98,7 @@ const Register = () => {
                                 InputLabelProps={{
                                     style: { color: '#fff', paddingLeft: '10px' },
                                 }}
-                                sx={{ width: '75%', m: 1 }} />
+                                sx={{ width: '75%', m: 1 ,input: { color: '#fff' }}} />
 
                             <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
 

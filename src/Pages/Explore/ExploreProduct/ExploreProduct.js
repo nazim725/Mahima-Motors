@@ -13,7 +13,7 @@ const ExploreProduct = (props) => {
     return (
         <div>
             <Zoom>
-            <Card sx={{ maxWidth: 345, height: 390, pb: 2 }}>
+            <Card sx={{ maxWidth: 345, height: 420, pb: 2 }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -30,7 +30,7 @@ const ExploreProduct = (props) => {
                             {price} TK Only
                         </Typography>
                         <Typography className="products-description" variant="body2">
-                            {description.slice(0,120)}
+                            {description.slice(0,147)}
                         </Typography>
 
                         <Box sx={{my:2}}>

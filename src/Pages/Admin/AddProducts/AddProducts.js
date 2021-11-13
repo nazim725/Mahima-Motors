@@ -44,7 +44,7 @@ const AddProducts = () => {
                 <form onSubmit={handleAddProducts}>
                     <h2 className="Products-heading">Add a Product</h2>
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1 ,input: { color: '#fff' }}}
                         id="outlined-size-small"
                         inputRef={nameRef}
                         label="Product Name"
@@ -56,7 +56,7 @@ const AddProducts = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={descriptionRef}
                         label="Description"
@@ -68,7 +68,7 @@ const AddProducts = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
                         id="outlined-size-small"
                         inputRef={imgRef}
                         label="Image URL"
@@ -80,7 +80,7 @@ const AddProducts = () => {
                         required
                     />
                     <TextField
-                        sx={{ width: '90%', m: 1 }}
+                        sx={{ width: '90%', m: 1 ,input: { color: '#fff' }}}
                         id="outlined-size-small"
                         inputRef={priceRef}
                         label="Product Price"

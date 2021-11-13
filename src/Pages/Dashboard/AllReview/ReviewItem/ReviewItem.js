@@ -12,7 +12,7 @@ const ReviewItem = (props) => {
     return (
         <div>
             <Zoom>
-                <Card sx={{ maxWidth: 345, minHeight: 350, pb: 4 }}>
+                <Card sx={{ maxWidth: 345, height: 500,}}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -21,7 +21,7 @@ const ReviewItem = (props) => {
                             alt="green iguana"
 
                         />
-                        <CardContent>
+                        <CardContent className="card-body">
                             <Typography gutterBottom variant="h5" component="div">
                                 {productName}
                             </Typography>

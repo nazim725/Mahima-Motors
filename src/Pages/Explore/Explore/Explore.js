@@ -15,7 +15,7 @@ const Explore = () => {
     }, [])
 
     return (
-        <div style={{ background: 'url("https://wallpaperaccess.com/full/4129330.jpg")' }}>
+        <div style={{ background: 'url("https://wallpaperaccess.com/full/4129330.jpg")',paddingBottom:'40px' }}>
             <NavigationBar></NavigationBar>
             <h3 className="Products-heading">Our Awesome Products</h3>
             <div className="products-container">

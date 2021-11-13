@@ -51,6 +51,7 @@ const MakeAdmin = () => {
                                 style: { color: '#fff', paddingLeft: '10px' }
                             }}
                             required
+                            sx={{input: { color: '#fff' }}}
 
                         />
                         <br />

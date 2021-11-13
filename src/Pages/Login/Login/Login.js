@@ -67,7 +67,7 @@ const Login = () => {
                                     variant="standard"
                                     name="email"
                                     onBlur={handleOnchange}
-                                    sx={{ width: '75%', m: 1 }}
+                                    sx={{ width: '75%', m: 1,input: { color: '#fff' } }}
                                     className='input-field'
                                     InputLabelProps={{
                                         style: { color: '#fff', paddingLeft: '10px' },
@@ -87,7 +87,7 @@ const Login = () => {
                                         style: { color: '#fff', paddingLeft: '10px' },
                                     }}
 
-                                    sx={{ width: '75%', m: 1 }} />
+                                    sx={{ width: '75%', m: 1,input: { color: '#fff' } }} />
 
                                 <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login In</Button>
                                 <br />

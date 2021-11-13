@@ -65,55 +65,64 @@ const Purchase = () => {
         e.preventDefault();
     }
     return (
-        <Zoom>
-            <Box>
-                <Navigation></Navigation>
-                <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
-                    {product.name}
-                </Typography>
-
-                <form className="login-form" onSubmit={handlePurchaseSubmit}>
-                    <TextField
-                        sx={{ width: '90%', m: 1 }}
-                        id="outlined-password-input"
-                        name="customerName"
-                        onBlur={handleOnBlur}
-                        placeholder="Your Name"
-                        size="small"
-                    />
-                    <TextField
-                        sx={{ width: '90%', m: 1 }}
-                        id="outlined-size-small"
-                        name="email"
-                        onBlur={handleOnBlur}
-                        defaultValue={user.email}
-                        size="small"
-                    />
-                    <TextField
-                        sx={{ width: '90%', m: 1 }}
-                        id="outlined-size-small"
-                        name="phone"
-                        onBlur={handleOnBlur}
-                        defaultValue="Phone Number"
-                        size="small"
-                    />
-                    <TextField
-                        sx={{ width: '90%', m: 1 }}
-                        id="outlined-size-small"
-                        name="address"
-                        onBlur={handleOnBlur}
-                        defaultValue="Address"
-                        size="small"
-                    />
-
-                    <Typography id="transition-modal-title" variant="h6" component="h2">
-                        Your Product Charged will be <span style={{ color: 'blue', fontWeight: 'bold' }}>{product.price}  </span>tk
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Zoom>
+                <Box>
+                    <Navigation></Navigation>
+                    <Typography id="transition-modal-title" className="login-heading" sx={{ mt: 4 }} variant="h6" component="h2">
+                        {product.name}
                     </Typography>
-                    <Button type="submit" variant="contained">Order Confirm</Button>
-                </form>
-            </Box>
-        </Zoom>
 
+                    <form className="login-form" onSubmit={handlePurchaseSubmit}>
+                        <TextField
+                            sx={{ width: '90%', m: 1, input: { color: '#fff' }  }}
+                            id="outlined-password-input"
+                            name="customerName"
+                            onBlur={handleOnBlur}
+                            placeholder="Your Name"
+                            size="small"
+                            className='input-field'
+                            required
+                        />
+                        <TextField
+                            sx={{ width: '90%', m: 1 , input: { color: '#fff' } }}
+                            id="outlined-size-small"
+                            name="email"
+                            onBlur={handleOnBlur}
+                            defaultValue={user.email}
+                            size="small"
+                            className='input-field'
+                            required
+                        />
+                        <TextField
+                            sx={{ width: '90%', m: 1, input: { color: '#fff' }  }}
+                            id="outlined-size-small"
+                            name="phone"
+                            onBlur={handleOnBlur}
+                            defaultValue="Phone Number"
+                            size="small"
+                            className='input-field'
+                            required
+                        />
+                        <TextField
+                            sx={{ width: '90%', m: 1, input: { color: '#fff' }  }}
+                            id="outlined-size-small"
+                            name="address"
+                            onBlur={handleOnBlur}
+                            defaultValue="Address"
+                            size="small"
+                            className='input-field'
+                            required
+                        />
+
+                        <Typography id="transition-modal-title" variant="h6" component="h2" style={{ color: 'blue', fontWeight: 'bold' }}>
+                            Your Product Charged will be <span >{product.price}  </span>tk
+                        </Typography>
+                        <Button type="submit" variant="contained">Order Confirm</Button>
+                    </form>
+                </Box>
+            </Zoom>
+        </div>
     );
 };
 
