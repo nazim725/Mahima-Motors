@@ -12,8 +12,8 @@ import Explore from './Pages/Explore/Explore/Explore';
 import Purchase from './Pages/Explore/Purchase/Purchase';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import Reviews from './Pages/Home/Review/Reviews/Reviews'
-import Footer from './Pages/Shared/Footer/Footer'
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

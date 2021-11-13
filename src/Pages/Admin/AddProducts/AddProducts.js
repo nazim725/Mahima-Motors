@@ -39,44 +39,67 @@ const AddProducts = () => {
 
     return (
 
-        <Zoom>
-            <form onSubmit={handleAddProducts}>
-                <h2 className="Products-heading">Add a Product</h2>
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder=" Products Name"
-                    size="small"
-                    inputRef={nameRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="description"
-                    size="small"
-                    inputRef={descriptionRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="Image URL"
-                    size="small"
-                    inputRef={imgRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="Products Price"
-                    size="small"
-                    inputRef={priceRef}
-                />
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Zoom>
+                <form onSubmit={handleAddProducts}>
+                    <h2 className="Products-heading">Add a Product</h2>
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={nameRef}
+                        label="Product Name"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={descriptionRef}
+                        label="Description"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={imgRef}
+                        label="Image URL"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={priceRef}
+                        label="Product Price"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
 
 
 
 
-                <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Product</Button>
-            </form>
-        </Zoom>
+                    <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Product</Button>
+                </form>
+            </Zoom>
+
+        </div>
     );
 };
 

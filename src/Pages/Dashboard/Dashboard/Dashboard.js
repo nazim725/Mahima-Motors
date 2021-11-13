@@ -23,7 +23,9 @@ import UpdateProducts from '../../Admin/UpdateProducts/UpdateProducts';
 import './Dashboard.css'
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AllReview from '../AllReview/AllReview/AllReview'
-
+import Divider from '@mui/material/Divider';
+import ToggleButton from '@mui/material/ToggleButton';
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 
 
 const drawerWidth = 200;
@@ -39,7 +41,9 @@ function Dashboard(props) {
     };
 
     const drawer = (
+
         <div className="dashboard-side">
+            
             <h2 className="title">MAHIMA MOTORS</h2>
             <NavLink to="/home"> <button className='navlink'>Go to Home</button></NavLink> <br />
             <NavLink to={`${url}`}><button className='navlink'>Dashboard</button></NavLink> <br />
@@ -62,9 +66,9 @@ function Dashboard(props) {
 
 
             {
-                user.email? <button className='navlink' onClick={logout}>Logout</button>
+                user.email ? <button className='navlink' onClick={logout}>Logout</button>
                     :
-                <NavLink to='/login'><button className='navlink'>Login</button></NavLink>
+                    <NavLink to='/login'><button className='navlink'>Login</button></NavLink>
             }
 
 
@@ -95,6 +99,9 @@ function Dashboard(props) {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
+                        <ToggleButton value="left" aria-label="left aligned">
+                            <FormatAlignLeftIcon />
+                        </ToggleButton>
 
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
@@ -167,7 +174,7 @@ function Dashboard(props) {
                         <ManageProducts></ManageProducts>
                     </Route>
                     <Route path={`${path}/allReview`}>
-                       <AllReview></AllReview>
+                        <AllReview></AllReview>
                     </Route>
                     <Route path={`${path}/updateProducts/:productId`}>
                         <UpdateProducts></UpdateProducts>

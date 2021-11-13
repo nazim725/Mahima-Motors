@@ -45,68 +45,77 @@ const UpdateProducts = () => {
 
     const handleNameChange = e => {
         const updatedName = e.target.value;
-        const updatedProduct = { name: updatedName, price: product.price, img: product.img,description:product.description };
+        const updatedProduct = { name: updatedName, price: product.price, img: product.img, description: product.description };
         setProduct(updatedProduct)
     }
     const handlePriceChange = e => {
         const updatePrice = e.target.value;
-        const updatedProduct = { name: product.name, price: updatePrice, img: product.img,description:product.description };
+        const updatedProduct = { name: product.name, price: updatePrice, img: product.img, description: product.description };
         setProduct(updatedProduct)
     }
 
     const handleImgChange = e => {
         const updateImg = e.target.value;
-        const updatedProduct = { name: product.name, price: product.price, img: updateImg ,description:product.description};
+        const updatedProduct = { name: product.name, price: product.price, img: updateImg, description: product.description };
         setProduct(updatedProduct)
     }
     const handleDescriptionChange = e => {
         const updateDescription = e.target.value;
-        const updatedProduct = { name: product.name, price: product.price, img: product.img,description:updateDescription };
+        const updatedProduct = { name: product.name, price: product.price, img: product.img, description: updateDescription };
         setProduct(updatedProduct)
     }
 
     return (
-        <Box>
-        <Typography className="login-heading" id="transition-modal-title" variant="h4" component="h2">
-            Update Products
-        </Typography>
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Box>
+                <Typography className="login-heading" id="transition-modal-title" variant="h4" component="h2">
+                    Update Products
+                </Typography>
 
-        <form onSubmit={handleUpdateProduct}>
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-password-input"
-                name="name"
-                onChange={handleNameChange}
-                value={product.name || ''}
-                
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                name="price"
-                onChange={handlePriceChange}
-                value={product.price || ''}
-                size="small"
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                name="img"
-                onChange={handleImgChange}
-                value={product.img || ''}
-                size="small"
-            />
-            <TextField
-                sx={{ width: '90%', m: 1 }}
-                id="outlined-size-small"
-                name="description"
-                onChange={handleDescriptionChange}
-                value={product.description || ''}
-                size="small"
-            />
-            <Button   sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Update</Button>
-        </form>
-    </Box>
+                <form onSubmit={handleUpdateProduct}>
+                    <TextField
+                        sx={{ width: '90%', m: 1, input: { color: '#fff' } }}
+                        
+                        id="outlined-password-input"
+                        name="name"
+                        onChange={handleNameChange}
+                        value={product.name || ''}
+                        className='input-field'
+                        required
+
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1, input: { color: '#fff' }}}
+                        id="outlined-size-small"
+                        name="price"
+                        onChange={handlePriceChange}
+                        value={product.price || ''}
+                        className='input-field'
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
+                        id="outlined-size-small"
+                        name="img"
+                        onChange={handleImgChange}
+                        value={product.img || ''}
+                        className='input-field'
+                        size="small"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1,input: { color: '#fff' } }}
+                        id="outlined-size-small"
+                        name="description"
+                        onChange={handleDescriptionChange}
+                        value={product.description || ''}
+                        size="small"
+                        className='input-field'
+                    />
+                    <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Update</Button>
+                </form>
+            </Box>
+
+        </div>
     );
 };
 

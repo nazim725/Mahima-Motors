@@ -69,7 +69,7 @@ const ManageAllOrders = () => {
 
 
     const handleChangedStatus = id => {
-        const url = `http://localhost:5000/orders/admin/${id}`
+        const url = `https://calm-bayou-08028.herokuapp.com/orders/admin/${id}`
         // console.log(id)
         console.log(url)
         fetch(url, {

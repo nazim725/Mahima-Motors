@@ -24,8 +24,8 @@ const Products = () => {
                 }
             </div>
 
-            <div style={{display:'flex',justifyContent:'center',marginTop:'10px'}}>
-            <NavLink style={{textDecoration:'none'}} to="/explore"> <Button variant="contained">Explore Products</Button></NavLink>
+            <div style={{display:'flex',justifyContent:'center',margin:'18px 0',}}>
+            <NavLink style={{textDecoration:'none'}} to="/explore"> <Button  variant="contained">Explore Products</Button></NavLink>
             </div>
 
 

@@ -22,9 +22,9 @@ const Banner = () => {
                 }}>
                     <Box sx={{ pl: 3 }}>
 
-                        <Typography variant="h3" gutterBottom component="div">
+                        <Typography  className="" gutterBottom component="div">
                             <Zoom left cascade>
-                                <span className="heading-subName">MAHIMA MOTORS</span>
+                                <span className="heading-subName project-title">MAHIMA MOTORS</span>
                             </Zoom>
                         </Typography>
 

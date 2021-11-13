@@ -36,80 +36,95 @@ const Register = () => {
     }
 
     return (
-        <Rotate top left cascade>
-            <Container>
-                <Box>
-                    <Typography className="login-heading" sx={{ mt: 4 }} variant="h4" gutterBottom>
-                        Create Account
-                    </Typography>
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Rotate top left cascade>
+                <Container>
+                    <Box>
+                        <Typography className="login-heading" variant="h4" gutterBottom>
+                            Create Account
+                        </Typography>
 
 
-                    {!isLoading && <form className="login-form" onSubmit={handleLoginSubmit}>
-                        <TextField
-                            id="standard-basic"
-                            label="Your Email"
-                            variant="standard"
-                            name="email"
-                            type="email"
-                            onBlur={handleOnBlur}
-                            sx={{ width: '75%', m: 1 }}
+                        {!isLoading && <form className="login-form" onSubmit={handleLoginSubmit}>
+                            <TextField
+                                id="standard-basic"
+                                label="Your Email"
+                                variant="standard"
+                                name="email"
+                                type="email"
+                                onBlur={handleOnBlur}
+                                sx={{ width: '75%', m: 1 }}
+                                className='input-field'
+                                InputLabelProps={{
+                                    style: { color: '#fff', paddingLeft: '10px' },
+                                }}
 
-                        />
-                        <TextField
-                            id="standard-basic"
-                            label="Your Name"
-                            variant="standard"
-                            name="name"
-                            type="text"
-                            onBlur={handleOnBlur}
-                            sx={{ width: '75%', m: 1 }}
+                            />
+                            <TextField
+                                id="standard-basic"
+                                label="Your Name"
+                                variant="standard"
+                                name="name"
+                                type="text"
+                                onBlur={handleOnBlur}
+                                sx={{ width: '75%', m: 1 }}
+                                className='input-field'
+                                InputLabelProps={{
+                                    style: { color: '#fff', paddingLeft: '10px' },
+                                }}
 
-                        />
+                            />
 
-                        <TextField
-                            id="standard-basic"
-                            label="Your Password"
-                            variant="standard"
-                            type="password"
-                            name="password"
-                            onBlur={handleOnBlur}
+                            <TextField
+                                id="standard-basic"
+                                label="Your Password"
+                                variant="standard"
+                                type="password"
+                                name="password"
+                                onBlur={handleOnBlur}
+                                className='input-field'
+                                InputLabelProps={{
+                                    style: { color: '#fff', paddingLeft: '10px' },
+                                }}
+                                sx={{ width: '75%', m: 1 }} />
+                            <TextField
+                                id="standard-basic"
+                                label=" Re-Enter Your Password"
+                                variant="standard"
+                                type="password"
+                                name="password2"
+                                onBlur={handleOnBlur}
+                                className='input-field'
+                                InputLabelProps={{
+                                    style: { color: '#fff', paddingLeft: '10px' },
+                                }}
+                                sx={{ width: '75%', m: 1 }} />
 
-                            sx={{ width: '75%', m: 1 }} />
-                        <TextField
-                            id="standard-basic"
-                            label=" Re-Enter Your Password"
-                            variant="standard"
-                            type="password"
-                            name="password2"
-                            onBlur={handleOnBlur}
+                            <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
 
-                            sx={{ width: '75%', m: 1 }} />
-
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
-
-                        <NavLink sx={{ textAlign: 'center' }} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
-
-
-                        {
-                            isLoading && <CircularProgress />
-                        }
-
-                        {
-                            user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
-                        }
-
-                        {
-                            authError && <Alert severity="error">{authError}</Alert>
-                        }
-
-                    </form>}
-
+                            <NavLink sx={{ textAlign: 'center' }} style={{ textDecoration: 'none' }} to="/login"> <Button variant="text">Already Registered? Please Login</Button></NavLink>
 
 
-                </Box>
-            </Container>
-        </Rotate>
+                            {
+                                isLoading && <CircularProgress />
+                            }
 
+                            {
+                                user?.email && <Alert severity="success">Successfully Create Your Account</Alert>
+                            }
+
+                            {
+                                authError && <Alert severity="error">{authError}</Alert>
+                            }
+
+                        </form>}
+
+
+
+                    </Box>
+                </Container>
+            </Rotate>
+        </div>
     );
 };
 

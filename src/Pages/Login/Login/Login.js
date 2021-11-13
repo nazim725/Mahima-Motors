@@ -50,7 +50,7 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
             <Zoom>
                 <Container>
                     <Grid container spacing={2}>
@@ -68,6 +68,10 @@ const Login = () => {
                                     name="email"
                                     onBlur={handleOnchange}
                                     sx={{ width: '75%', m: 1 }}
+                                    className='input-field'
+                                    InputLabelProps={{
+                                        style: { color: '#fff', paddingLeft: '10px' },
+                                    }}
 
                                 /> <br />
 
@@ -78,6 +82,10 @@ const Login = () => {
                                     type="password"
                                     name="password"
                                     onBlur={handleOnchange}
+                                    className='input-field'
+                                    InputLabelProps={{
+                                        style: { color: '#fff', paddingLeft: '10px' },
+                                    }}
 
                                     sx={{ width: '75%', m: 1 }} />
 

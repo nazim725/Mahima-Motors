@@ -6,29 +6,30 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea ,Button,Box} from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import Zoom from 'react-reveal/Zoom';
+import './ExploreProduct.css'
 
 const ExploreProduct = (props) => {
     const { name, price, description, img ,_id} = props.product
     return (
         <div>
             <Zoom>
-            <Card sx={{ maxWidth: 345, height: 370, pb: 2 }}>
+            <Card sx={{ maxWidth: 345, height: 390, pb: 2 }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="170"
                         image={img}
                         alt="green iguana"
                        
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                    <CardContent className="card-body">
+                        <Typography className="name" gutterBottom variant="h5" component="div">
                             {name}
                         </Typography>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {price}
+                        <Typography className="price" gutterBottom variant="h5" component="div">
+                            {price} TK Only
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography className="products-description" variant="body2">
                             {description.slice(0,120)}
                         </Typography>
 

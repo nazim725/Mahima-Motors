@@ -32,31 +32,41 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <Zoom>
-            <div>
 
-                <h2 className="Products-heading">Make An Admin</h2>
-                <form onSubmit={handleAdminSubmit}>
-                    <TextField
-                        style={{ width: '90%' }}
-                        id="outlined-password-input"
-                        label="Email"
-                        type="email"
-                        onBlur={handleOnBlur}
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Zoom>
+                <div >
 
-                    />
-                    <br />
+                    <h2 className="Products-heading">Make An Admin</h2>
+                    <form onSubmit={handleAdminSubmit}>
+                        <TextField
+                            style={{ width: '90%' }}
+                            id="outlined-password-input"
+                            type="email"
+                            onBlur={handleOnBlur}
+                            label="Product Name"
+                            variant="standard"
+                            className='input-field'
+                            InputLabelProps={{
+                                style: { color: '#fff', paddingLeft: '10px' }
+                            }}
+                            required
 
-                    <Button style={{ width: '90%' }} sx={{ mt: 2 }} type="submit" variant="contained">Make Admin</Button>
-                </form>
-                {
-                    success && <Alert severity="success">Successfully Make Admin</Alert>
-                }
+                        />
+                        <br />
+
+                        <Button style={{ width: '90%' }} sx={{ mt: 2 }} type="submit" variant="contained">Make Admin</Button>
+                    </form>
+                    {
+                        success && <Alert severity="success">Successfully Make Admin</Alert>
+                    }
 
 
-            </div>
+                </div>
 
-        </Zoom>
+            </Zoom>
+
+        </div>
     );
 };
 

@@ -1,0 +1,17 @@
+.price{
+    color: darkorange;
+}
+
+.products-description{
+    color: lightslategray;
+}
+
+.card-body{
+    background-color: rgba(180, 212, 241, 0.959);
+}
+
+.input-field{
+    
+    background-color: #60c1f123;
+    color: lime !important;
+}

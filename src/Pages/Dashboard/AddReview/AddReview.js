@@ -44,67 +44,101 @@ const AddReview = () => {
         e.preventDefault();
     }
     return (
-        <Zoom>
-            <form onSubmit={handleAddReview}>
+        <div style={{ background: 'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")', paddingBottom: '40px' }}>
+            <Zoom>
+                <form onSubmit={handleAddReview}>
 
-                <h2 className="Products-heading">Add  Your Review About Our Motor Bikie</h2>
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="Product Name"
-                    size="small"
-                    inputRef={productNameRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="Name"
-                    size="small"
-                    inputRef={nameRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="description"
-                    size="small"
-                    inputRef={descriptionRef}
-                />
-
-
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="Image URL"
-                    size="small"
-                    inputRef={imgRef}
-                />
-                <TextField
-                    sx={{ width: '90%', m: 1 }}
-                    id="outlined-size-small"
-                    placeholder="RatingL"
-                    size="small"
-                    inputRef={ratingRef}
-                />
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <Stack spacing={3}>
+                    <h2 className="Products-heading">Add  Your Review About Our Motor Bike</h2>
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={productNameRef}
+                        label="Product Name"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={nameRef}
+                        label="Your Name"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={descriptionRef}
+                        label="description"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
 
 
-                        <DatePicker
-                            disableFuture
-                            // openTo="day"
-                            views={['day']}
-                            value={date}
-                            onChange={(newValue) => {
-                                setDate(newValue);
-                            }}
-                            renderInput={(params) => <TextField sx={{ width: '90%', m: 1 }} {...params} />}
-                        />
-                    </Stack>
-                </LocalizationProvider>
-                <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Review</Button>
-            </form>
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        size="small"
+                        inputRef={imgRef}
+                        label="Image URL"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-size-small"
+                        inputRef={ratingRef}
+                        label="description"
+                        variant="standard"
+                        className='input-field'
+                        InputLabelProps={{
+                            style: { color: '#fff', paddingLeft: '10px' }
+                        }}
+                        required
+                    />
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <Stack spacing={3}>
 
-        </Zoom>
+
+                            <DatePicker
+                                disableFuture
+                                // openTo="day"
+                                views={['day']}
+                                value={date}
+                                onChange={(newValue) => {
+                                    setDate(newValue);
+                                }}
+                                renderInput={(params) => <TextField
+                                    className='input-field'
+
+                                    InputLabelProps={{
+                                        style: { color: '#fff', paddingLeft: '10px' }
+                                    }}
+                                    sx={{ width: '90%', m: 1, color: 'white' }} {...params} />}
+                            />
+                        </Stack>
+                    </LocalizationProvider>
+                    <Button sx={{ width: '90%', m: 1 }} type="submit" variant="contained">Add Review</Button>
+                </form>
+
+            </Zoom>
+        </div>
     );
 };
 

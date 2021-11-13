@@ -12,25 +12,26 @@ const Product = (props) => {
     return (
         <div >
             <Zoom>
-                <Card sx={{ maxWidth: 345, minHeight: 350, pb: 4 }}>
+                <Card sx={{ maxWidth: 345, height: 360,}}>
                     <CardActionArea >
                         <CardMedia
                             component="img"
-                            height="160"
+                            height="170"
                             image={img}
                             alt="green iguana"
+                            
 
 
                         />
-                        <CardContent  >
+                        <CardContent className="card-body" >
                             <Typography className="name" gutterBottom variant="h5" component="div">
                                 {name}
                             </Typography>
-                            <Typography className="name" gutterBottom variant="h5" component="div">
+                            <Typography className="price" gutterBottom variant="h5" component="div">
                                 {price} TK
                             </Typography>
-                            <Typography className="description1" variant="body2" color="text.secondary">
-                                {description.slice(0, 120)}
+                            <Typography className="description1" variant="body2">
+                                {description.slice(0, 150)}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
