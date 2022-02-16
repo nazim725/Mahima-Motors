@@ -1,0 +1,15 @@
+.add-form {
+  margin-left: 170px;
+}
+.text-Field {
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  .add-form {
+    margin-left: 5px;
+  }
+  .text-Field {
+    width: 95%;
+  }
+}
