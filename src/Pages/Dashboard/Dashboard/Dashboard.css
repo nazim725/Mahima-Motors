@@ -1,24 +1,24 @@
-.dashboard-side{
-    padding-left: 20px;
-    background-color: #033E3E;
+.dashboard-side {
+  padding-left: 20px;
+  background-color: #033e3e;
+  height: 700px;
 }
-.navlink{
-    width: 160px;
-    text-decoration: none;
-    background-color:#00CED1;
-    padding: 6px 14px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    color:rgb(73, 75, 77);
-    font-weight: bold;
-    
+.navlink {
+  width: 160px;
+  text-decoration: none;
+  background-color: #00ced1;
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  color: rgb(73, 75, 77);
+  font-weight: bold;
 }
-.navlink:hover{
-    background-color:#0e3131;
-    color:rgb(117, 131, 146);
+.navlink:hover {
+  background-color: #0e3131;
+  color: rgb(117, 131, 146);
 }
-.title{
-    color:yellow;
-    text-align: center;
-    margin-top: 15px;
+.title {
+  color: yellow;
+  text-align: center;
+  margin-top: 15px;
 }
