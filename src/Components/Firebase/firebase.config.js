@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBfBJkQPMlbNCNkD9OnNJP16WKr9wHgRI4",
-    authDomain: "mahima-motors.firebaseapp.com",
-    projectId: "mahima-motors",
-    storageBucket: "mahima-motors.appspot.com",
-    messagingSenderId: "612166325345",
-    appId: "1:612166325345:web:9f81460f2db46d745d0620"
-  };
+  apiKey: "AIzaSyBxjjfZIo9b3LrTheaZJAkIx2jWgrWFY-k",
+  authDomain: "mahima-motors-bike.firebaseapp.com",
+  projectId: "mahima-motors-bike",
+  storageBucket: "mahima-motors-bike.appspot.com",
+  messagingSenderId: "1077121552121",
+  appId: "1:1077121552121:web:a4b80797f620f00078dc28",
+};
 
-  export default firebaseConfig
+export default firebaseConfig;

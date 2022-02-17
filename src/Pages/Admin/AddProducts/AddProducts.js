@@ -16,7 +16,7 @@ const AddProducts = () => {
     const price = priceRef.current.value;
     const newProducts = { name, img, description, price };
 
-    fetch("https://calm-bayou-08028.herokuapp.com/products", {
+    fetch("https://mahima-motors-server.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

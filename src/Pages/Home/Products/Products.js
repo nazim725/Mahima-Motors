@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://calm-bayou-08028.herokuapp.com/products")
+    fetch("https://mahima-motors-server.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

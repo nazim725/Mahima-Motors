@@ -29,7 +29,7 @@ const Purchase = () => {
   };
 
   useEffect(() => {
-    const url = `https://calm-bayou-08028.herokuapp.com/products/${productId}`;
+    const url = `https://mahima-motors-server.herokuapp.com/products/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -47,7 +47,7 @@ const Purchase = () => {
     };
     console.log(purchaseProduct);
     // send to the server
-    fetch("https://calm-bayou-08028.herokuapp.com/orders", {
+    fetch("https://mahima-motors-server.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -66,9 +66,11 @@ const Purchase = () => {
   return (
     <div
       style={{
-        background:
-          'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")',
+        background: 'url("https://wallpaperaccess.com/full/4129330.jpg")',
         paddingBottom: "40px",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        height: "700px",
       }}
     >
       <Zoom>
@@ -76,10 +78,10 @@ const Purchase = () => {
           <NavigationBar></NavigationBar>
           <Typography
             id="transition-modal-title"
-            className="login-heading"
+            style={{ color: "#fff", textAlign: "center" }}
             sx={{ mt: 4 }}
-            variant="h6"
-            component="h2"
+            variant="h4"
+            component="h4"
           >
             {product.name}
           </Typography>
@@ -130,7 +132,11 @@ const Purchase = () => {
               id="transition-modal-title"
               variant="h6"
               component="h2"
-              style={{ color: "blue", fontWeight: "bold" }}
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                paddingBottom: "20px",
+              }}
             >
               Your Product Charged will be <span>{product.price} </span>tk
             </Typography>
