@@ -22,7 +22,10 @@ const AllReview = () => {
       }}
     >
       <div className="reviews-container">
-        <h3 className="Products-heading"> Products Reviews</h3>
+        <h3 className="Products-heading" style={{ padding: "40px 0" }}>
+          {" "}
+          Products Reviews
+        </h3>
         <div className="All-review">
           {reviews.map((review) => (
             <ReviewItem key={review._id} review={review}></ReviewItem>

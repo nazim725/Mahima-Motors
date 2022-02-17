@@ -86,7 +86,9 @@ const MyOrders = () => {
                   <StyledTableCell align="center">
                     {row.productName}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{row.price}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    {row.productPrice}
+                  </StyledTableCell>
                   <StyledTableCell align="center">
                     <Button onClick={() => handleDeleteOrder(row._id)}>
                       Cancel Order

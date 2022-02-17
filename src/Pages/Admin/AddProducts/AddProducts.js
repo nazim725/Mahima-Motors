@@ -39,11 +39,15 @@ const AddProducts = () => {
         background:
           'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")',
         paddingBottom: "40px",
+        height: "700px",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        paddingTop: "60px",
       }}
     >
       <Zoom>
-        <form onSubmit={handleAddProducts}>
-          <h2 className="Products-heading">Add a Product</h2>
+        <h2 className="Products-heading">Add a Product</h2>
+        <form className="add-form" onSubmit={handleAddProducts}>
           <TextField
             sx={{ width: "90%", m: 1, input: { color: "#fff" } }}
             id="outlined-size-small"

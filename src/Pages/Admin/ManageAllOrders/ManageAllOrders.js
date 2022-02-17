@@ -112,7 +112,9 @@ const ManageAllOrders = () => {
                   <StyledTableCell align="center">
                     {row.productName}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{row.price}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    {row.productPrice}
+                  </StyledTableCell>
                   <StyledTableCell align="center">{row.status}</StyledTableCell>
                   <StyledTableCell align="center">
                     <button

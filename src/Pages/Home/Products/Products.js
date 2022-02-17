@@ -16,7 +16,9 @@ const Products = () => {
   }, []);
   return (
     <div style={{ marginTop: "30px", paddingBottom: "20px" }}>
-      <h3 className="Products-heading ">Our Awesome Products</h3>
+      <h3 className="Products-heading " style={{ padding: "30px 0" }}>
+        Our Awesome Products
+      </h3>
       <div className="products-container">
         {products
           .map((product) => (
