@@ -8,6 +8,7 @@
 
 .card-body{
     background-color: rgba(180, 212, 241, 0.959);
+    height: 380px;
 }
 
 .input-field{

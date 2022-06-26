@@ -1,14 +1,16 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import { Table, Button } from "@mui/material";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import useAuth from "../../../Components/hooks/useAuth";
-import Zoom from "react-reveal/Zoom";
+import * as React from 'react'
+import { styled } from '@mui/material/styles'
+import { Table, Button } from '@mui/material'
+import TableBody from '@mui/material/TableBody'
+import TableCell, { tableCellClasses } from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Paper from '@mui/material/Paper'
+import useAuth from '../../../Components/hooks/useAuth'
+import Zoom from 'react-reveal/Zoom'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -18,48 +20,49 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
-}));
+}))
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
+  '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
   // hide last border
-  "&:last-child td, &:last-child th": {
+  '&:last-child td, &:last-child th': {
     border: 0,
   },
-}));
+}))
 
 const MyOrders = () => {
-  const { user } = useAuth();
-  const [orders, setOrders] = React.useState([]);
+  const { user } = useAuth()
+  const [orders, setOrders] = React.useState([])
+  const location = useLocation()
 
   React.useEffect(() => {
-    const url = `https://mahima-motors-server.herokuapp.com/orders?email=${user.email}`;
+    const url = `https://mahima-motors-server.herokuapp.com/orders?email=${user.email}`
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, []);
+      .then((data) => setOrders(data))
+  }, [])
 
-  console.log(orders);
+  console.log(orders)
 
   const handleDeleteOrder = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete?");
+    const proceed = window.confirm('Are you sure, you want to delete?')
     if (proceed) {
-      const url = `https://mahima-motors-server.herokuapp.com/orders/${id}`;
+      const url = `https://mahima-motors-server.herokuapp.com/orders/${id}`
       fetch(url, {
-        method: "DELETE",
+        method: 'DELETE',
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remainingOrder = orders.filter((order) => order._id !== id);
-            setOrders(remainingOrder);
+            alert('deleted successfully')
+            const remainingOrder = orders.filter((order) => order._id !== id)
+            setOrders(remainingOrder)
           }
-        });
+        })
     }
-  };
+  }
 
   return (
     <Zoom>
@@ -105,7 +108,7 @@ const MyOrders = () => {
         </TableContainer>
       </div>
     </Zoom>
-  );
-};
+  )
+}
 
-export default MyOrders;
+export default MyOrders

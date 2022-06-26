@@ -1,0 +1,18 @@
+.product-img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  padding: 20px 100px;
+}
+.product-content {
+  padding: 20px 100px;
+}
+@media screen and (max-width: 768px) {
+  .product-img {
+    height: 250px;
+    padding: 20px 20px;
+  }
+  .product-content {
+    padding: 20px 20px;
+  }
+}

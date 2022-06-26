@@ -30,9 +30,9 @@ const Products = () => {
       <div
         style={{ display: "flex", justifyContent: "center", margin: "18px 0" }}
       >
-        <NavLink style={{ textDecoration: "none" }} to="/explore">
+        <NavLink style={{ textDecoration: "none" ,marginTop:'30px'}} to="/explore">
           {" "}
-          <Button variant="contained">Explore Products</Button>
+          <Button className='see-more-button'>See More >>></Button>
         </NavLink>
       </div>
     </div>

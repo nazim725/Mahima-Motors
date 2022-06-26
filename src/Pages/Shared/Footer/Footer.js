@@ -1,15 +1,12 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react'
+import './Footer.css'
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-container">
         <div>
-          <h2>
-            Mahima <br />
-            Motors
-          </h2>
+          <h2>Mahima Motors</h2>
           <p>
             Pahartali,Raozan <br /> Chittagong
           </p>
@@ -25,11 +22,11 @@ const Footer = () => {
           </p>
         </div>
 
-        <div>
+        <div className="join">
           <h3>Join With Us</h3>
-          <i class="fas fa-phone-alt"></i> 01830082347 <br />
-          <i class="far fa-envelope"></i> mahima@m.com <br />
-          <i class="fab fa-facebook"></i> facebook.com
+          <i class="fas fa-phone-alt"></i> &nbsp; 01830082347 <br />
+          <i class="far fa-envelope"></i>  &nbsp; mahima@m.com <br />
+          <i class="fab fa-facebook"></i>  &nbsp; facebook.com
         </div>
       </div>
       <p className="footer-p">
@@ -37,7 +34,7 @@ const Footer = () => {
         Coordination activities of AUDI AG. All rights reserved. VAT 05113870967
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -30,6 +30,7 @@
 }
 .core-heading {
   color: deepskyblue;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {

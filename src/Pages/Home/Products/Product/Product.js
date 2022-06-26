@@ -1,30 +1,35 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
-import "./Product.css";
-import Zoom from "react-reveal/Zoom";
-import { Link } from "react-router-dom";
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Typography from '@mui/material/Typography'
+import { CardActionArea } from '@mui/material'
+import './Product.css'
+import Zoom from 'react-reveal/Zoom'
+import { Link } from 'react-router-dom'
 
 const Product = (props) => {
-  const { name, price, description, img, _id } = props.product;
+  const { name, price, description, img, _id } = props.product
   return (
     <div>
       <Zoom>
         <Link
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: 'none' }}
           to={`/exploreProductDetails/${_id}`}
         >
-          <Card sx={{ maxWidth: 345, height: 360 }}>
+          <Card
+            sx={{ maxWidth: 345, height: 400 }}
+            className="product-card-img"
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="170"
+                height="200"
                 image={img}
                 alt="green iguana"
+                className="card-img-body"
               />
+
               <CardContent className="card-body">
                 <Typography
                   className="name"
@@ -51,7 +56,7 @@ const Product = (props) => {
         </Link>
       </Zoom>
     </div>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

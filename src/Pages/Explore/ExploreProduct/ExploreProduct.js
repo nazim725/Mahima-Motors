@@ -13,11 +13,11 @@ const ExploreProduct = (props) => {
   return (
     <div>
       <Zoom>
-        <Card sx={{ maxWidth: 345, height: 420, pb: 2 }}>
+        <Card sx={{ maxWidth: 345, height: 440, pb: 2 }}>
           <CardActionArea>
             <CardMedia
               component="img"
-              height="170"
+              height="200"
               image={img}
               alt="green iguana"
             />

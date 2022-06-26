@@ -20,7 +20,7 @@ const Explore = () => {
         paddingBottom: "40px",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: "2000px",
+        height: "2300px",
       }}
     >
       <NavigationBar></NavigationBar>
