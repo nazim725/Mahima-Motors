@@ -83,7 +83,7 @@ const Purchase = () => {
           <NavigationBar></NavigationBar>
           <Typography
             id="transition-modal-title"
-            style={{ color: '#fff', textAlign: 'center' }}
+            style={{ color: '#fff', textAlign: 'center',padding:"20px" }}
             sx={{ mt: 4 }}
             variant="h4"
             component="h4"
@@ -141,11 +141,12 @@ const Purchase = () => {
                 color: '#fff',
                 fontWeight: 'bold',
                 paddingBottom: '20px',
+                marginTop:'20px'
               }}
             >
               Your Product Charged will be <span>{product.price} </span>tk
             </Typography>
-            <Button type="submit" variant="contained">
+            <Button type="submit" className='see-more-button mt-3'>
               Order Confirm
             </Button>
           </form>

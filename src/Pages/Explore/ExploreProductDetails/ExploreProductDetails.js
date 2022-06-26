@@ -50,8 +50,8 @@ const ExploreProductDetails = () => {
               $ {product.price}
             </Typography>
 
-            <Link to={`/purchase/${product._id}`}>
-              <Button variant="contained">Go to Purchase</Button>
+            <Link to={`/purchase/${product._id}`} style={{textDecoration:'none'}}>
+              <Button className='see-more-button mt-3'>Go to Purchase</Button>
             </Link>
           </div>
         </Grid>

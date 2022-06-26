@@ -67,7 +67,7 @@ const Banner = () => {
                 to="/explore"
               >
                 {' '}
-                <Button variant="contained">Explore Products</Button>
+                <Button className='see-more-button mt-4'>Explore Products</Button>
               </NavLink>
             </Box>
           </Container>
