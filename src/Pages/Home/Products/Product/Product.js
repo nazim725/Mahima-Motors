@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 const Product = (props) => {
   const { name, price, description, img, _id } = props.product
   return (
-    <div>
+    <div className="product-card">
       <Zoom>
         <Link
           style={{ textDecoration: 'none' }}

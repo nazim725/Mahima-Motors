@@ -1,23 +1,32 @@
-.heading-name{
-    color: #00FFFF;
+.heading-name {
+  color: #00ffff;
 }
-.heading-subName{
-    color:#FF00FF;
-    
-   
+.heading-subName {
+  color: #ff00ff;
 }
-.heading-2nd{
-    color: #66CDAA;
+.heading-2nd {
+  color: #66cdaa;
 }
 
-.project-title{
-    font-size: 45px;
+.project-title {
+  font-size: 45px;
 }
-
-@media screen and (max-width:768px) {
-
-    .project-title{
+.banner-info {
+  margin-left: 100px;
+  padding: 20px;
+}
+.banner-pic {
+    margin-top: 50px;
+  }
+@media screen and (max-width: 768px) {
+  .project-title {
     font-size: 34px;
-}
-
+  }
+  .banner-info {
+    margin-left: 10px;
+  }
+  .banner-pic {
+    margin-top: 40px;
+  }
+  
 }

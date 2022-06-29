@@ -32,8 +32,8 @@ const Banner = () => {
             textAlign: 'left',
           }}
         >
-          <Container>
-            <Box sx={{ pl: 12 }}>
+          <div className="banner-info">
+            <Box >
               <Typography className="" gutterBottom component="div">
                 <Zoom left cascade>
                   <span className="heading-subName project-title">
@@ -70,11 +70,11 @@ const Banner = () => {
                 <Button className='see-more-button mt-4'>Explore Products</Button>
               </NavLink>
             </Box>
-          </Container>
+          </div>
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
           <Fade right>
-            <img src={motor} alt="" width="100%"  />
+            <img src={motor} alt="" width="100%" className="banner-pic" />
           </Fade>
         </Grid>
       </Grid>

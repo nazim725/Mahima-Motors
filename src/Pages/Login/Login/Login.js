@@ -1,47 +1,47 @@
-import React, { useState } from "react";
-import { Container, Grid, Typography, Button, Alert } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
-import TextField from "@mui/material/TextField";
-import { NavLink } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { useLocation } from "react-router";
-import useAuth from "../../../Components/hooks/useAuth";
-import "./Login.css";
-import Zoom from "react-reveal/Zoom";
+import React, { useState } from 'react'
+import { Container, Grid, Typography, Button, Alert } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
+import TextField from '@mui/material/TextField'
+import { NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router'
+import useAuth from '../../../Components/hooks/useAuth'
+import './Login.css'
+import Zoom from 'react-reveal/Zoom'
 
 const Login = () => {
-  const { loginUser, authError, isLoading, user, signInWithGoogle } = useAuth();
-  const [loginData, setLoginData] = useState({});
-  const location = useLocation();
-  const history = useHistory();
+  const { loginUser, authError, isLoading, user, signInWithGoogle } = useAuth()
+  const [loginData, setLoginData] = useState({})
+  const location = useLocation()
+  const history = useHistory()
 
   const handleOnchange = (e) => {
-    const field = e.target.name;
-    const value = e.target.value;
-    const newLoginData = { ...loginData };
-    newLoginData[field] = value;
-    setLoginData(newLoginData);
-    console.log(value);
-  };
+    const field = e.target.name
+    const value = e.target.value
+    const newLoginData = { ...loginData }
+    newLoginData[field] = value
+    setLoginData(newLoginData)
+    console.log(value)
+  }
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history);
-  };
+    signInWithGoogle(location, history)
+  }
 
   const handleLoginSubmit = (e) => {
-    loginUser(loginData.email, loginData.password, location, history);
-    e.preventDefault();
-  };
+    loginUser(loginData.email, loginData.password, location, history)
+    e.preventDefault()
+  }
 
   return (
     <div
       style={{
         background:
           'url("https://c4.wallpaperflare.com/wallpaper/369/754/357/pattern-simple-background-wallpaper-preview.jpg")',
-        paddingBottom: "40px",
-        height: "800px",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        paddingBottom: '40px',
+        height: '800px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
     >
       <Zoom>
@@ -60,12 +60,12 @@ const Login = () => {
                     variant="standard"
                     name="email"
                     onBlur={handleOnchange}
-                    sx={{ width: "75%", m: 1, input: { color: "#fff" } }}
+                    sx={{ width: '75%', m: 1, input: { color: '#fff' } }}
                     className="input-field"
                     InputLabelProps={{
-                      style: { color: "#fff", paddingLeft: "10px" },
+                      style: { color: '#fff', paddingLeft: '10px' },
                     }}
-                  />{" "}
+                  />{' '}
                   <br />
                   <TextField
                     id="standard-basic"
@@ -76,12 +76,12 @@ const Login = () => {
                     onBlur={handleOnchange}
                     className="input-field"
                     InputLabelProps={{
-                      style: { color: "#fff", paddingLeft: "10px" },
+                      style: { color: '#fff', paddingLeft: '10px' },
                     }}
-                    sx={{ width: "75%", m: 1, input: { color: "#fff" } }}
+                    sx={{ width: '75%', m: 1, input: { color: '#fff' } }}
                   />
                   <Button
-                    sx={{ width: "75%", m: 1 }}
+                    sx={{ width: '75%', m: 1 }}
                     type="submit"
                     variant="contained"
                   >
@@ -89,10 +89,10 @@ const Login = () => {
                   </Button>
                   <br />
                   <NavLink
-                    style={{ textDecoration: "none", textAlign: "center" }}
+                    style={{ textDecoration: 'none', textAlign: 'center' }}
                     to="/register"
                   >
-                    {" "}
+                    {' '}
                     <Button variant="text">New User? Please Register</Button>
                   </NavLink>
                   <Button variant="contained" onClick={handleGoogleSignIn}>
@@ -113,10 +113,19 @@ const Login = () => {
               )}
             </Grid>
           </Grid>
+          <div style={{textAlign:'center'}}>
+            <NavLink
+              style={{ textDecoration: 'none', marginTop: '30px' }}
+              to="/home"
+            >
+              {' '}
+              <Button className="see-more-button mt-4">Go to Home</Button>
+            </NavLink>
+          </div>
         </Container>
       </Zoom>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
