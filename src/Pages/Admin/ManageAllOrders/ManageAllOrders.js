@@ -38,7 +38,7 @@ const ManageAllOrders = () => {
   const [status, setStatus] = React.useState("");
 
   React.useEffect(() => {
-    fetch("https://mahima-motors-server.herokuapp.com/orders/admin")
+    fetch("https://mahima-motors-server.vercel.app/orders/admin")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -48,7 +48,7 @@ const ManageAllOrders = () => {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://mahima-motors-server.herokuapp.com/orders/${id}`;
+      const url = `https://mahima-motors-server.vercel.app/orders/${id}`;
 
       fetch(url, {
         method: "DELETE",
@@ -65,7 +65,7 @@ const ManageAllOrders = () => {
   };
 
   const handleChangedStatus = (id) => {
-    const url = `https://mahima-motors-server.herokuapp.com/orders/admin/${id}`;
+    const url = `https://mahima-motors-server.vercel.app/orders/admin/${id}`;
     // console.log(id)
     console.log(url);
     fetch(

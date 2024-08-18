@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from "react";
-import Review from "../../../Home/Review/Review/Review";
-import ReviewItem from "../ReviewItem/ReviewItem";
-import "./AllReview.css";
+import React, { useState, useEffect } from 'react'
+import Review from '../../../Home/Review/Review/Review'
+import ReviewItem from '../ReviewItem/ReviewItem'
+import './AllReview.css'
 
 const AllReview = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([])
   useEffect(() => {
-    fetch("https://mahima-motors-server.herokuapp.com/reviews")
+    fetch('https://mahima-motors-server.vercel.app/reviews')
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data);
-        console.log(data);
-      });
-  }, []);
+        setReviews(data)
+        console.log(data)
+      })
+  }, [])
   return (
     <div
       style={{
         background: 'url("https://wallpaperaccess.com/full/4129330.jpg")',
-        marginTop: "-30px",
-        paddingBottom: "20px",
+        marginTop: '-30px',
+        paddingBottom: '20px',
       }}
     >
       <div className="reviews-container">
-        <h3 className="Products-heading" style={{ padding: "40px 0" }}>
-          {" "}
+        <h3 className="Products-heading" style={{ padding: '40px 0' }}>
+          {' '}
           Products Reviews
         </h3>
         <div className="All-review">
@@ -33,7 +33,7 @@ const AllReview = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AllReview;
+export default AllReview

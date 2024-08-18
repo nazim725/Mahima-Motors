@@ -13,7 +13,7 @@ const ExploreProductDetails = () => {
   console.log(productId)
 
   useEffect(() => {
-    const url = `https://mahima-motors-server.herokuapp.com/products/${productId}`
+    const url = `https://mahima-motors-server.vercel.app/products/${productId}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -30,7 +30,6 @@ const ExploreProductDetails = () => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         height: '870px',
-        
       }}
     >
       <NavigationBar />
@@ -50,8 +49,11 @@ const ExploreProductDetails = () => {
               $ {product.price}
             </Typography>
 
-            <Link to={`/purchase/${product._id}`} style={{textDecoration:'none'}}>
-              <Button className='see-more-button mt-3'>Go to Purchase</Button>
+            <Link
+              to={`/purchase/${product._id}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <Button className="see-more-button mt-3">Go to Purchase</Button>
             </Link>
           </div>
         </Grid>

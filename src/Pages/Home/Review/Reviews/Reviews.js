@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Review from "../Review/Review";
-import "./Reviews.css";
+import React, { useState, useEffect } from 'react'
+import Review from '../Review/Review'
+import './Reviews.css'
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([])
   useEffect(() => {
-    fetch("https://mahima-motors-server.herokuapp.com/reviews")
+    fetch('https://mahima-motors-server.vercel.app/reviews')
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data);
-        console.log(data);
-      });
-  }, []);
+        setReviews(data)
+        console.log(data)
+      })
+  }, [])
   return (
-    <div style={{ marginTop: "30px", paddingBottom: "20px" }}>
+    <div style={{ marginTop: '30px', paddingBottom: '20px' }}>
       <div className="reviews-container">
         <h3 className="Products-heading"> Products Reviews</h3>
         <div className="">
@@ -23,7 +23,7 @@ const Reviews = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

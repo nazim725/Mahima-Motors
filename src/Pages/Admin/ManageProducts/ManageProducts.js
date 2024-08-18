@@ -1,14 +1,14 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import { Table, Button } from "@mui/material";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { NavLink } from "react-router-dom";
-import Zoom from "react-reveal/Zoom";
+import * as React from 'react'
+import { styled } from '@mui/material/styles'
+import { Table, Button } from '@mui/material'
+import TableBody from '@mui/material/TableBody'
+import TableCell, { tableCellClasses } from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Paper from '@mui/material/Paper'
+import { NavLink } from 'react-router-dom'
+import Zoom from 'react-reveal/Zoom'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -18,59 +18,59 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
-}));
+}))
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
+  '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
   // hide last border
-  "&:last-child td, &:last-child th": {
+  '&:last-child td, &:last-child th': {
     border: 0,
   },
-}));
+}))
 
 const ManageProducts = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   // ---------------------------------
 
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState([])
   React.useEffect(() => {
-    fetch("https://mahima-motors-server.herokuapp.com/products")
+    fetch('https://mahima-motors-server.vercel.app/products')
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
-        console.log(data);
-      });
-  }, []);
+        setProducts(data)
+        console.log(data)
+      })
+  }, [])
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete?");
+    const proceed = window.confirm('Are you sure, you want to delete?')
     if (proceed) {
-      const url = `https://mahima-motors-server.herokuapp.com/products/${id}`;
+      const url = `https://mahima-motors-server.vercel.app/products/${id}`
       fetch(url, {
-        method: "DELETE",
+        method: 'DELETE',
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("deleted successfully");
+            alert('deleted successfully')
             const remainingProducts = products.filter(
-              (product) => product._id !== id
-            );
-            setProducts(remainingProducts);
+              (product) => product._id !== id,
+            )
+            setProducts(remainingProducts)
           }
-        });
+        })
     }
-  };
+  }
   return (
     <Zoom>
       <div>
@@ -90,7 +90,7 @@ const ManageProducts = () => {
                 <StyledTableRow key={row.name}>
                   <StyledTableCell component="th" scope="row">
                     <img
-                      style={{ width: "70px", height: "50px" }}
+                      style={{ width: '70px', height: '50px' }}
                       src={row.img}
                       alt=""
                     />
@@ -98,13 +98,13 @@ const ManageProducts = () => {
                   <StyledTableCell align="center">{row.name}</StyledTableCell>
 
                   <StyledTableCell align="center">
-                    {" "}
+                    {' '}
                     <NavLink
-                      style={{ textDecoration: "none" }}
+                      style={{ textDecoration: 'none' }}
                       to={`updateProducts/${row._id}`}
                     >
                       <button className="button">Update</button>
-                    </NavLink>{" "}
+                    </NavLink>{' '}
                     <button
                       className="cancel-button"
                       onClick={() => handleDelete(row._id)}
@@ -119,7 +119,7 @@ const ManageProducts = () => {
         </TableContainer>
       </div>
     </Zoom>
-  );
-};
+  )
+}
 
-export default ManageProducts;
+export default ManageProducts

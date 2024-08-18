@@ -32,7 +32,7 @@ const Purchase = () => {
   }
 
   useEffect(() => {
-    const url = `https://mahima-motors-server.herokuapp.com/products/${productId}`
+    const url = `https://mahima-motors-server.vercel.app/products/${productId}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -50,7 +50,7 @@ const Purchase = () => {
     }
     console.log(purchaseProduct)
     // send to the server
-    fetch('https://mahima-motors-server.herokuapp.com/orders', {
+    fetch('https://mahima-motors-server.vercel.app/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -83,7 +83,7 @@ const Purchase = () => {
           <NavigationBar></NavigationBar>
           <Typography
             id="transition-modal-title"
-            style={{ color: '#fff', textAlign: 'center',padding:"20px" }}
+            style={{ color: '#fff', textAlign: 'center', padding: '20px' }}
             sx={{ mt: 4 }}
             variant="h4"
             component="h4"
@@ -141,12 +141,12 @@ const Purchase = () => {
                 color: '#fff',
                 fontWeight: 'bold',
                 paddingBottom: '20px',
-                marginTop:'20px'
+                marginTop: '20px',
               }}
             >
               Your Product Charged will be <span>{product.price} </span>tk
             </Typography>
-            <Button type="submit" className='see-more-button mt-3'>
+            <Button type="submit" className="see-more-button mt-3">
               Order Confirm
             </Button>
           </form>

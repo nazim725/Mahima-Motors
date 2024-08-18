@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from "react";
-import NavigationBar from "../../Shared/Navigation/NavigationBar";
-import ExploreProduct from "../ExploreProduct/ExploreProduct";
+import React, { useState, useEffect } from 'react'
+import NavigationBar from '../../Shared/Navigation/NavigationBar'
+import ExploreProduct from '../ExploreProduct/ExploreProduct'
 
 const Explore = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
   useEffect(() => {
-    fetch("https://mahima-motors-server.herokuapp.com/products")
+    fetch('https://mahima-motors-server.vercel.app/products')
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
-        console.log(data);
-      });
-  }, []);
+        setProducts(data)
+        console.log(data)
+      })
+  }, [])
 
   return (
     <div
       style={{
         background: 'url("https://wallpaperaccess.com/full/4129330.jpg")',
-        paddingBottom: "40px",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        height: "2300px",
+        paddingBottom: '40px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '2300px',
       }}
     >
       <NavigationBar></NavigationBar>
       <h3
         className="Products-heading"
-        style={{ marginTop: "40px", marginBottom: "40px" }}
+        style={{ marginTop: '40px', marginBottom: '40px' }}
       >
         Our Awesome Products
       </h3>
@@ -36,7 +36,7 @@ const Explore = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Explore;
+export default Explore

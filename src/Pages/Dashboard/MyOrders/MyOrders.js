@@ -38,7 +38,7 @@ const MyOrders = () => {
   const location = useLocation()
 
   React.useEffect(() => {
-    const url = `https://mahima-motors-server.herokuapp.com/orders?email=${user.email}`
+    const url = `https://mahima-motors-server.vercel.app/orders?email=${user.email}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data))
@@ -49,7 +49,7 @@ const MyOrders = () => {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm('Are you sure, you want to delete?')
     if (proceed) {
-      const url = `https://mahima-motors-server.herokuapp.com/orders/${id}`
+      const url = `https://mahima-motors-server.vercel.app/orders/${id}`
       fetch(url, {
         method: 'DELETE',
       })
